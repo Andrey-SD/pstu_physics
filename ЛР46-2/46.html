@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="style.css" rel="stylesheet" media="all" />
+  <title>Лабораторна робота №46-2</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="scroll.js"></script>
+</head>
+
+<body bgcolor="#FBFBFB">
+
+  <div class="site-bar">
+    <div class="site-minibar">
+      <div class="theory-block">
+        <a href="#theory" class="theory-button">Теорія</a>
+      </div>
+      <div class="virtual-block">
+        <a href="#virtual" class="virtual-button">Віртуальний стенд</a>
+      </div>
+      <div class="report-block">
+        <a href="#report" class="report-button">Звіт</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header">
+    <div class="text-title">
+      Лабораторна робота №46-2
+      <p class="text-name">"Дослідження повної, корисної потужностей та ККД акумулятора залежно від його навантаження"
+      </p>
+      <img class="img-main" src="device.png" width="800" height="300" alt="прилад">
+      <div class="button-begin">
+        <a href="#theory"><i>Почати роботу</i></a>
+      </div>
+    </div>
+    <div class="text-help">
+      <p>На рисунку (зліва направо): вольтметр, амперметр, реостат</p>
+    </div>
+  </div>
+
+  <div class="site-tutorial" id="theory">
+    <div class="text-title">
+      Перед початком ознайомтесь з <br>
+      <a class="text-underlined" href="Lab46_ua.doc" download>ТЕОРІЄЮ</a><br>
+      <img class="img-main" src="book.png" width="700" alt="книга">
+      <div class="button-begin">
+        <a href="#virtual"><i>Приступити</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-virtual" id="virtual">
+    <div class="text-title">
+      Віртуальна лабораторна робота<br>
+    </div>
+    <form oninput="calculate(omsvalue.value, edsvalue.value, rvalue.value)">
+      <div class="equipment-block">
+        <div class="background-block">
+          <img src="equipment.png" alt="обладнання" width="100%">
+        </div>
+
+        <div class="resistanse-value-block">
+          <output id="omsvalue">1.00</output>
+        </div>
+        <div class="om-block">
+          Ω
+        </div>
+        <div class="resistanse-range-block">
+          Реостат<br>
+          <input class="bar" type="range" id="oms" min="0.2" max="20.01" value="1" step="0.01"
+            onchange="omsvalue.value=value" oninput="omsFunction(this.value)" />
+        </div>
+
+        <div class="battery-value-block">
+          <output id="voltsvalue">1.00</output>
+        </div>
+        <div class="v-block">
+          В
+        </div>
+        <div class="battery-range-block">
+          Вольтметр<br>
+        </div>
+
+        <div class="ammeter-range-block">
+          Амперметр<br>
+        </div>
+        <div class="ammeter-value-block">
+          <output id="ampersvalue">1.00</output>
+        </div>
+        <div class="a-block">
+          А
+        </div>
+
+        <div class="edsvalue-value-block">
+          ε = <output id="edsvalue">1</output> В
+        </div>
+
+        <div style="visibility: hidden;"><output id="rvalue">1</output></div>
+    </form>
+  </div>
+  <div class="text-help">
+    <br>
+    <p>Не перезавантажуйте сторінку, інакше значення ε та r буде скинуто!</p>
+  </div>
+  </form>
+  </div>
+
+  <div class="site-real" id="real">
+    <div class="text-title">
+      <div class="button-begin">
+        <a href="report46-ua.doc"><i>Звіт</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-copyright">
+    <div class="text-copyright">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики &copy; <span id="year-label"></span>
+    </div>
+  </div>
+
+  <script>
+    const yearLabel = document.getElementById("year-label");
+    const year = new Date().getFullYear();
+    yearLabel.textContent = year;
+  </script>
+
+  <script>
+    function omsFunction(myValue) {
+      document.getElementById("omsvalue").innerHTML = myValue;
+    }
+    function getRandom(max, min) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+    function calculate(R, E, r) {
+      document.getElementById('ampersvalue').innerHTML = (E / (parseFloat(R) + parseFloat(r))).toFixed(2);
+      document.getElementById('voltsvalue').innerHTML = ((document.getElementById('ampersvalue').innerHTML) * R).toFixed(2);
+    }
+
+    document.getElementById('rvalue').innerHTML = getRandom(300, 100) / 100;
+    document.getElementById('edsvalue').innerHTML = getRandom(20, 5);
+  </script>
+
+</body>
+
+</html>

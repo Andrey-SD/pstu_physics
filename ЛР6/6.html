@@ -1,0 +1,166 @@
+<html lang="uk">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="style.css" rel="stylesheet" media="all" />
+  <title>Лабораторна робота №6</title>
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="scroll.js"></script>
+</head>
+
+<body bgcolor="#FBFBFB">
+  <div class="site-bar">
+    <div class="site-minibar">
+      <div class="theory-block">
+        <a href="#theory" class="theory-button">Теорія</a>
+      </div>
+      <div class="practice-block">
+        <a href="#practice" class="practice-button">Практика</a>
+      </div>
+      <div class="report-block">
+        <a href="#report" class="report-button">Звіт</a>
+      </div>
+      <div class="timer-block">
+        <a href="#timer" class="timer-button">Секундомір</a><br>
+        <script language="JavaScript" type="text/javascript">
+          var base = 60;
+          var clocktimer, dateObj, dh, dm, ds, ms;
+          var readout = '';
+          var h = 1, m = 1, tm = 1, s = 0, ts = 0, ms = 0, show = true, init = 0, ii = 0;
+          function clearСlock() {
+            clearTimeout(clocktimer);
+            h = 1; m = 1; tm = 1; s = 0; ts = 0; ms = 0;
+            init = 0; show = true;
+            readout = '00:00:00.00';
+            document.TestForm.stopwatch.value = readout;
+            ii = 0;
+          }
+          function startTIME() {
+            var cdateObj = new Date();
+            var t = (cdateObj.getTime() - dateObj.getTime()) - (s * 1000);
+            if (t > 999) { s++; }
+            if (s >= (m * base)) {
+              ts = 0;
+              m++;
+            } else {
+              ts = parseInt((ms / 100) + s);
+              if (ts >= base) { ts = ts - ((m - 1) * base); }
+            }
+            if (m > (h * base)) {
+              tm = 1;
+              h++;
+            } else {
+              tm = parseInt((ms / 100) + m);
+              if (tm >= base) { tm = tm - ((h - 1) * base); }
+            }
+            ms = Math.round(t / 10);
+            if (ms > 99) { ms = 0; }
+            if (ms == 0) { ms = '00'; }
+            if (ms > 0 && ms <= 9) { ms = '0' + ms; }
+            if (ts > 0) { ds = ts; if (ts < 10) { ds = '0' + ts; } } else { ds = '00'; }
+            dm = tm - 1;
+            if (dm > 0) { if (dm < 10) { dm = '0' + dm; } } else { dm = '00'; }
+            dh = h - 1;
+            if (dh > 0) { if (dh < 10) { dh = '0' + dh; } } else { dh = '00'; }
+            readout = dh + ':' + dm + ':' + ds + '.' + ms;
+            if (show == true) { document.TestForm.stopwatch.value = readout; }
+            clocktimer = setTimeout("startTIME()", 1);
+          }
+          //функція для паузи
+          function pause() {
+            if (init == 0) {
+              dateObj = new Date();
+              startTIME();
+              init = 1;
+            } else {
+              if (show == true) {
+                show = false;
+              } else { show = true; }
+            }
+          } 
+        </script>
+        <form name=TestForm>
+          <input name=stopwatch size=10 value="00:00:00.00">
+          <input type=button value="Обнулити" onclick="clearСlock()">
+          <input type=button value="Старт/Стоп" onclick="pause()">
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="site-header">
+    <div class="text-title">
+      <div class="img-main"><img src="device.gif" width="350px" alt="device"></div>
+      <div class="text-part">
+        Лабораторна робота №6
+        <p class="text-name">«Визначення моменту інерції тіла методом крутильних коливань»</p>
+        <div class="button-begin">
+          <a href="#theory"><i>Почати роботу</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-tutorial" id="theory">
+    <div class="text-title">
+      Перед початком ознайомтесь з <br>
+      <a class="text-underlined" href="theory.doc" download>ТЕОРІЄЮ</a><br>
+      <img src="book.jpg" width="700" alt="lorem">
+      <div class="button-begin">
+        <a href="#practice"><i>Приступити</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-practice" id="practice">
+    <div class="text-title">
+      Дослід 1<br>
+      <video id="video1" width="800px" height="450px" controls="controls" loop="loop">
+        <source src="1.mp4" loop="loop" type='video/mp4;       codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="1.WebM" type='video/webm; 				codecs="vp8, vorbis"'>
+      </video>
+      <br>Дослід 2<br>
+      <video id="video2" width="800px" height="450px" controls="controls" loop="loop">
+        <source src="2.mp4" loop="loop" type='video/mp4;       codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="2.WebM" type='video/webm; 				codecs="vp8, vorbis"'>
+      </video>
+      <br>Дослід 3<br>
+      <video id="video3" width="800px" height="450px" controls="controls" loop="loop">
+        <source src="3.mp4" loop="loop" type='video/mp4;       codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="3.WebM" type='video/webm; 				codecs="vp8, vorbis"'>
+      </video>
+      <br>Дослід 4<br>
+      <video id="video4" width="800px" height="450px" controls="controls" loop="loop">
+        <source src="4.mp4" loop="loop" type='video/mp4;       codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="4.WebM" type='video/webm; 				codecs="vp8, vorbis"'>
+      </video>
+
+      <div class="button-begin">
+        <a class="text-underlined" href="report.docx" download>Звіт</a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="site-copyright">
+    <div class="text-copyright">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики &copy;<span id="year-label"></span>
+    </div>
+  </div>
+  <!-- <span id="year-label"></span> -->
+  <script>
+    const yearLabel = document.getElementById("year-label");
+    const year = new Date().getFullYear();
+    console.log(year);
+    yearLabel.textContent = year; // якщо хочеш вивести на сторінку
+
+  </script>
+
+</body>
+
+</html>

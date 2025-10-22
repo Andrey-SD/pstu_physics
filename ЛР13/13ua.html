@@ -1,0 +1,114 @@
+<html lang="ru">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="style.css" rel="stylesheet" media="all" />
+  <title>Лабораторна робота №13</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="scroll.js"></script>
+
+</head>
+
+<body bgcolor="#FBFBFB">
+
+  <div class="site-bar">
+    <div class="site-minibar">
+      <div class="theory-block">
+        <a href="#theory" class="theory-button">Теорія</a>
+      </div>
+      <div class="real-block">
+        <a href="#real" class="real-button">Лабораторна робота</a>
+      </div>
+      <div class="report-block">
+        <a href="#report" class="report-button">Звіт</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="language-button">
+    <!-- <a href="13ru.html" >
+			<img src="Russia.png" alt="російська" title= "язык" height="55px">
+		</a> -->
+  </div>
+
+
+  <div class="site-header">
+    <div class="text-title">
+      <div class="img-main"><img src="device.png" width="350px" alt="device"></div>
+      <div class="text-part">
+        Лабораторна робота №13
+        <p class="text-name">"Визначення відношення теплоємностей для повітря"</p>
+        <br><br><br><br><br><br>
+        <div class="button-begin">
+          <a href="#theory"><i>Почати роботу</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-help">
+      <p>На рисунку: манометр, балон з краном, насос</p>
+    </div>
+  </div>
+
+  <div class="site-tutorial" id="theory">
+    <div class="text-title">
+      Перед початком ознайомтеся з <br>
+      <a class="text-underlined" href="13ua.doc" download>ТЕОРІЄЮ</a><br>
+      <img class="img-book" src="book.png" width="700" alt="book">
+      <div class="button-begin">
+        <a href="#real"><i>Почати</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-real" id="real">
+    <div class="text-title">
+
+
+      <video id="video1" width="28%" controls="controls" loop="loop">
+        <source src="13.webm" type='video/webm;         codecs="vp8, vorbis"'>
+        <source src="13.mp4" loop="loop" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+
+      </video>
+      <div class="text-help-experiment">
+        <p>Перегляньте відео і зафіксуйте значення з дослідів</p>
+      </div>
+
+      <div class="button-begin">
+        <a href="report13.doc" download><i>Звіт</i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="site-report" id="report">
+    <div class="text-title">
+      Отримані дані занесіть в<br><br>
+      <a class="text-underlined" href="report13.doc" download>ТАБЛИЦЮ</a><br><br>
+      Проведіть розрахунки, оформите і натисніть "Відправити"<br>
+      Студенти ДН можуть надати викладачеві звіт в друкованому вигляді під час сесії.
+      <br><br><br><br>
+      <div class = "button-send">
+        <a href="https://ds.pstu.edu/mod/assign/view.php?id=57873&forceview=1"><i>Відправити</i></a>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="site-copyright">
+    <div class="text-copyright">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики &copy;<span id="year-label"></span>
+    </div>
+  </div>
+
+  <script>
+    const yearLabel = document.getElementById("year-label");
+    const year = new Date().getFullYear();
+    console.log(year);
+    yearLabel.textContent = year; // якщо хочеш вивести на сторінку
+
+  </script>
+</body>
+
+</html>

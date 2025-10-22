@@ -1,0 +1,41 @@
+<!doctype html>
+<html  lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+	<title>Тест</title>
+</head>
+
+<body>
+    <div class = "site-virtual" id ="virtual">
+        <div class="full-device-box">
+
+        	<div class="light-left" id="light-left">
+        		<div class="device-block-left">
+        			<div class="ampermetr-block-left">
+
+        				<img class="device-left" src="img/equipment.png">
+	
+          				<div class="amperage-value-block">
+          				  <output id="ampvalue">000.0</output>
+          				</div>
+
+                        <div class="amperage-range-block">
+                          <input class="bar" type="range" id="oms" min="0.5" max="100.0" value="0" step="0.5" onchange="updateAmpValue(this.value)" oninput="updateAmpValue(this.value)"/>
+                        </div>
+        			</div>
+
+        		</div>
+        	</div>
+
+        </div>
+
+    </div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/scroll.js"></script>
+
+</body>
+</html>

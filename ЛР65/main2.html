@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Виконання | ДВНЗ ПДТУ</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="img/logo.png" />
+</head>
+<body>
+<main>
+    <h1>Вправа 2</h1>
+    
+    <a class="back" href="./main.html">
+        <img src="img/back-button.png" alt="" height="45" />
+    </a>
+
+    <div class="flex-row">
+        <button class="button slider">Увімкнути пристрій</button>
+        <button class="button button-ruler">Обрати силу натягу</button>
+        <button class="button button-string">Подивитись на струну</button>
+    </div>
+    
+
+    <div class="slider-container">
+        
+        <div class="light-left" id="light-left">
+            <img class="scoreboard" src="img/equipment.png">
+            
+            <div class="amperage-value-block">
+                <output id="ampvalue">000.0</output>
+            </div>
+        </div>
+        <div class="amperage-range-block">
+            <input class="bar" type="range" id="oms" min="0.5" max="100.0" value="0" step="0.5" onchange="updateAmpValue(this.value)" oninput="updateAmpValue(this.value)"/>
+        </div>
+        
+        <img src="./img/modif-off-transp2.png" alt="" class="slider-img" />
+        <button class="slider-btn" type="button"></button>
+        <button class="ruler-btn" type="button"></button>
+        <button class="string-btn" type="button"></button>
+
+        <select class="material" name="dropdown">
+            <option value="" selected disabled hidden>Обрати матеріал струни</option>
+            <option value="мідь">мідь</option>
+            <option value="срібло">срібло</option>
+            <option value="сталь">сталь</option>
+        </select>
+
+        <select class="long" name="dropdown">
+            <option value="" selected disabled hidden>Обрати довжину струни</option>
+            <option value="0.4">0,4 м</option>
+            <option value="0.5">0,5 м</option>
+            <option value="0.6">0,6 м</option>
+        </select>
+    </div>
+
+</main>
+
+
+<div class="modal1">
+    <div class="ruler-container">
+        <img src="./img/ruler.png"
+             alt="Ruler"
+             class="ruler"
+             draggable="false" />
+    </div>
+
+    <input type="range"
+           class="range"
+           step="0.05"
+           min="0"
+           max="0.5"
+           value="0"/>
+
+
+
+    <img src="./img/close-button.png" alt="" class="close-btn1" />
+</div>
+
+<div class="modal2">
+    <div class="string-container">
+        <img src="./img/string-on-3.png"
+             alt="String"
+             class="string"
+             draggable="false" />
+    </div>
+    
+    <img src="./img/close-button.png" alt="" class="close-btn2" />
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/script2.js"></script>
+<script src="./js/select.js"></script>
+</body>
+</html>

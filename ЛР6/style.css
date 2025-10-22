@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Helvetica, Bold;
+  font-size: 20px;
+  min-width: 800px;
+}
+
+video {
+
+  margin: 20px;
+}
+
+.site-bar {
+  position: fixed;
+  z-index: 10000;
+  background: linear-gradient(to top, #FFF, #E1E1E1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  min-width: 800px;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 65px;
+}
+
+.site-minibar {
+  width: 1000px;
+  margin: auto;
+}
+
+.site-minibar div {
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  top: 30px;
+}
+
+.site-minibar a {
+  transition: 1s;
+  color: #333;
+  text-decoration: none;
+}
+
+.site-minibar a:hover {
+  color: #777;
+}
+
+.theory-block {
+  margin-left: 15%;
+}
+
+.practice-block {
+  margin-left: 18%;
+}
+
+.report-block {
+  margin-left: 19%;
+}
+
+.timer-block {
+  margin-left: 16%;
+}
+
+.theory-button {
+  position: absolute;
+  transition: 1s;
+}
+
+.practice-button {
+  position: absolute;
+  transition: 1s;
+}
+
+.report-button {
+  position: absolute;
+  transition: 1s;
+}
+
+.timer-button {
+  margin-left: 55px;
+  position: absolute;
+  transition: 1s;
+}
+
+
+
+
+.site-header {
+  background: #fefcea;
+  background: linear-gradient(to top, #ECECEC, #FFF);
+  width: 100%;
+  height: 700px;
+}
+
+.text-title {
+  width: 1000px;
+  color: black;
+  text-align: center;
+  font-size: 26pt;
+  padding-top: 90px;
+  margin: auto;
+  text-shadow: 1px 1px 2px gray;
+}
+
+.text-name {
+  font-size: 30px;
+}
+
+.img-main {
+  text-align: center;
+  padding: 20px;
+}
+
+.button-begin {
+  width: 270px;
+  background: #fefcea;
+  background: linear-gradient(to top, #999, #FFF);
+  border: 2px solid #555;
+  box-shadow: 0 0 5px rgba(150, 150, 150, 0.2);
+  border-radius: 15px;
+  margin: 12px auto;
+  padding: 22px;
+  transition: 1s;
+}
+
+.button-begin a {
+  transition: 1s;
+  color: #444;
+  text-decoration: none;
+}
+
+.button-begin a:hover {
+  color: #333;
+}
+
+.button-begin:hover {
+  transform: scale(1.07);
+}
+
+.button-send {
+  width: 270px;
+  background: #fefcea;
+  background: linear-gradient(to top, #999, #FFF);
+  border: 2px solid #555;
+  box-shadow: 0 0 5px rgba(150, 150, 150, 0.2);
+  border-radius: 15px;
+  margin: 12px auto;
+  padding: 22px;
+  transition: 1s;
+}
+
+.button-send a {
+  transition: 1s;
+  color: #444;
+  text-decoration: none;
+}
+
+.button-send a:hover {
+  color: #333;
+}
+
+.button-send:hover {
+  transform: scale(1.07);
+}
+
+.site-tutorial {
+  width: 100%;
+  height: 700px;
+}
+
+.text-underlined {
+  color: black;
+  font-size: 46px;
+  font-weight: 500;
+}
+
+.site-real {
+  background: #fefcea;
+  background: linear-gradient(to top, #ECECEC, #FFF);
+  width: 100%;
+  height: 700px;
+}
+
+.site-practice {
+  width: 100%;
+
+}
+
+.text-rotated {
+  padding: 200px;
+  transform: rotate(-45deg);
+  font-size: 68px;
+  color: lightgray;
+  text-shadow: 1px 1px 2px lightgray;
+}
+
+.site-report {
+  background: #fefcea;
+  background: linear-gradient(to top, #ECECEC, #FFF);
+
+  height: 700px;
+}
+
+.site-copyright {
+  background: linear-gradient(to top, #343434, #4B4B4B);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 65px;
+  font-size: 16px;
+  color: lightgray;
+  text-align: center;
+}
+
+.text-copyright {
+  padding-top: 5px;
+}
+
+.img-main {
+  display: inline-block;
+  float: left;
+}
+
+.text-part {
+  text-align: center;
+  float: left;
+  width: 600px;
+  height: 350px;
+  margin-top: 50px;
+}
+
+.text-part .button-begin {
+  margin-top: 200px;
+}

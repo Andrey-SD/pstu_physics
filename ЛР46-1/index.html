@@ -1,0 +1,104 @@
+<html lang="uk">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link href="style.css" rel="stylesheet" media="all" />
+  <title>Лабораторна робота №46-1</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="scroll.js"></script>
+</head>
+
+<body bgcolor="#FBFBFB">
+
+  <div class="site-bar">
+    <div class="site-minibar">
+      <div class="theory-block">
+        <a href="#theory" class="theory-button">Теорія</a>
+      </div>
+      <div class="real-block">
+        <a href="#real" class="real-button">Лабораторна робота</a>
+      </div>
+      <div class="report-block">
+        <a href="#report" class="report-button">Звіт</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header">
+    <div class="text-title">
+      Лабораторна робота №46-1
+      <p class="text-name">"Дослідження повної, корисної потужностей та ККД акумулятора залежно від його навантаження"
+      </p>
+      <img class="img-main" src="device.png" width="800" height="300" alt="прилад">
+      <div class="button-begin">
+        <a href="#theory"><i>Почати роботу</i></a>
+      </div>
+    </div>
+    <div class="text-help">
+      <p>На рисунку (зліва направо): вольтметр, амперметр, реостат</p>
+    </div>
+  </div>
+
+  <div class="site-tutorial" id="theory">
+    <div class="text-title">
+      Перед початком ознайомтесь з <br>
+      <a class="text-underlined" href="Lab46_ua.doc" download>ТЕОРІЄЮ</a><br>
+      <img class="img-main" src="book.png" width="700" alt="книга">
+      <div class="button-begin">
+        <a href="#real"><i>Приступити</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-real" id="real">
+    <div class="text-title">
+      Реальна лабораторна робота<br>
+      <embed src="РЛР№46(12).pdf" width='810px' height='480px' type="application/pdf" />
+    </div>
+    <div class="text-help">
+      <a href="РЛР№46(12).pdf">Завантажте</a>, якщо ви не бачите презентацію.
+    </div>
+  </div>
+  <div class="site-real" id="real">
+    <div class="text-title">
+
+
+      <div class="button-begin">
+        <a href="report46-ua.doc"><i>Звіт</i></a>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <div class="site-report" id="report">
+    <div class="text-title">
+      Отримані дані занесіть у<br><br>
+      <a class="text-underlined" href="report.doc" download>ТАБЛИЦЮ</a><br><br>
+      Виконайте розрахунки, оформіть і натисніть "Надіслати"<br>
+      Студенти дистанційної форми навчання можуть надати викладачеві звіт у друкованому вигляді під час сесії.
+      <br><br><br><br>
+      <div class="button-send">
+        <a href="http://ds.pstu.edu/mod/assign/view.php?id=48812&action=editsubmission"><i>Надіслати</i></a>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="site-copyright">
+    <div class="text-copyright">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики &copy; <span id="year-label"></span>
+    </div>
+  </div>
+
+
+  <script>
+    const yearLabel = document.getElementById("year-label");
+    const year = new Date().getFullYear();
+    yearLabel.textContent = year; // якщо хочеш вивести на сторінку
+
+  </script>
+
+</body>
+
+</html>

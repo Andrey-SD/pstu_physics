@@ -1,0 +1,588 @@
+<!doctype html>
+<html  lang="en">
+
+<head>
+    <style>
+		*{ 
+		margin: 0; 
+		}
+		
+		body {
+		    font-family: Helvetica;
+		    font-size: 20px;
+		    min-width: 800px;
+		}
+
+
+        .text-title-virtual {
+            font-family: Helvetica;
+            width: 700px;
+            color: white;
+            text-align: center;
+            font-size: 30pt;
+            padding-top: 75px;
+            padding-bottom: 30px;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 2px;
+        }
+
+        .text-small {
+            font-family: Helvetica;
+            color: white;
+            text-align: center;
+            font-size: 17pt;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 1px;
+        }
+
+        .site-virtual {
+            width:100%;
+            height:700px;
+            background: gray url(plastic-bg.jpg) round;
+;
+        }
+        .full-device-box {
+            width: 100%;
+            height: 360px;
+            margin: 0 auto;
+        }
+        .hints-box {
+            width: 100%;
+            height: 130px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hints-box-left {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:left;
+        }
+        .hints-box-right {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:right;
+        }
+        .hints-box-middle {
+        	display: inline-block;
+            height: 100%;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .hints-box-topside {
+            float:left;
+            height: 70px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .hints-box-bottomside {
+            float:left;
+            height: 60px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .image-arrow {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .image-spin {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .light-left {
+            position: relative;
+            margin-top:120px;
+        	vertical-align: middle;
+            width: 50%;
+            height: 120px;
+            float:left;
+            background:rgba(0,0,0,0);
+/*background: -moz-linear-gradient(top, rgba(255,238,1,0) 23%, rgba(255,238,1,0.25) 35%, rgba(255,238,1,0.52) 41%, rgba(255,245,102,0.75) 46%, rgba(255,249,163,0.75) 49%, rgba(255,245,123,0.75) 51%, rgba(255,234,1,0.48) 57%, rgba(255,234,1,0.25) 62%, rgba(255,234,1,0) 75%);
+background: -webkit-linear-gradient(top, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+background: linear-gradient(to bottom, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffee01', endColorstr='#00ffea01',GradientType=0 ); */
+        }
+        .light-right {
+            position: relative;
+            margin-top:120px;
+        	vertical-align: middle;
+            width: 50%;
+            height: 120px;
+            float:left;
+            background:rgba(0,0,0,0);
+/*background: -moz-linear-gradient(top, rgba(1,192,255,0) 23%, rgba(1,192,255,0.25) 35%, rgba(1,192,255,0.52) 41%, rgba(102,217,255,0.75) 46%, rgba(163,232,255,0.75) 49%, rgba(123,223,255,0.75) 51%, rgba(1,196,255,0.48) 57%, rgba(1,196,255,0.25) 62%, rgba(1,196,255,0) 75%); 
+background: -webkit-linear-gradient(top, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+background: linear-gradient(to bottom, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0001c0ff', endColorstr='#0001c4ff',GradientType=0 ); */
+        }
+        .device-box {
+            width: 360px;
+            height: 360px;
+            margin: 0 auto;
+        }
+
+        .device-block-left {
+            width: 140px;
+            float:left;
+        }
+        .device-block-right {
+            width: 140px;
+            float:right;
+        }
+
+        .device-right {
+            height: 120px;
+		    transition: 2s ease;  
+            float:right;
+        }
+        .device-right:hover {
+            box-shadow: 0 0 10px rgba(255,121,215,0.5);
+		    transition: .5s ease;  
+        }
+        .device-left {
+            height: 120px;
+            float:left;
+        	transform: scale(-1, 1);
+		    transition: 2s ease;  
+        }
+        .device-left:hover {
+            box-shadow: 0 0 10px rgba(3,217,255,0.5);
+		    transition: .5s ease;  
+        }
+
+        .device-text-left {
+            height: 120px;
+            float:left;
+        }
+		
+		.draggable_wp {
+		    position: absolute;
+		    margin-left: 180px;
+		    margin-top: 180px;
+
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+		}
+        .handle {
+            position: absolute;
+            margin-left:-180px;
+            margin-top:-180px;
+            width: 360px;
+            height: 360px;
+        }
+        .layer {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+        }
+		
+        .hole {
+            position: absolute;
+            float:left;
+            width: 340px;
+            height: 340px;
+            background: black;
+            overflow: hidden;
+            border-radius: 180px;
+            margin:5px;
+        }
+        .lens {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 262px;
+            margin:40px;
+        }
+        .target {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+        }
+        .targetbox {
+            position: absolute;
+            float:left;
+            width: 70px;
+            height: 40px;
+            left:136px;
+            top:275px;
+            color: #FBFBFB;
+            text-align: center;
+        }
+        .move {
+            position: absolute;
+            float:left;
+            left:180px;
+            width: 720px;
+            height: 360px;
+        }
+        .move2 {
+            position: absolute;
+            float:left;
+            left:180px;
+            margin-left:-720px;
+            width: 720px;
+            height: 360px;
+        }
+
+		.n_p{
+
+  		}
+   		.f_p{
+   		    opacity: 0;
+   		}
+		.n_p2{
+
+  		}
+   		.f_p2{
+   		    opacity: 0;
+   		}
+   		.show{
+   		    opacity: 1;
+   		}
+
+		  @keyframes go-top-bottom {  
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  @-webkit-keyframes go-top-bottom {
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  .progress-verical {
+		    animation: go-top-bottom .7s infinite alternate;
+		    -webkit-animation: go-top-bottom .7s infinite alternate;
+		    position: relative;
+		  }
+
+
+		#st { 
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            background-color: black;
+
+		    transition:background .15s ease;   
+		}
+		.st { 
+            background-color: rgba(1, 1, 1, 1);
+		}
+
+.container {
+}
+.box-minmax{
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  font-size: 30px;
+  color: white;
+}
+.range-slider {
+    margin-top: 0px;
+    
+}
+
+.rs-range {
+    margin-top: 240px;
+    width: 100%;
+    -webkit-appearance: none;
+  cursor: pointer;
+    z-index: 2;
+  background: url('rail.png');
+  background-size: 100% 100%;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background: url('contrasticon.png');
+  cursor: pointer;
+}
+.rs-label {
+    
+    z-index: 1;
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    box-sizing: border-box;
+    margin-top: 150px;
+    margin-left: 4px;
+    left: attr(value);
+}
+
+
+        .laser-left {
+            position: relative;
+            vertical-align: middle;
+            width: 144px;
+            height: 70%;
+            float:left;
+            background: rgba(0,0,0,0);
+        }
+
+        .laser-image {
+            margin-top: 150px;
+        }
+
+        .web-middle {
+            position: relative;
+            vertical-align: middle;
+            width: calc(100% - 288px);
+            height: 70%;
+            float:left;
+            background: rgba(0,0,0,0);
+            overflow: hidden;
+        }
+
+        .ruler-right {
+        	overflow: hidden;
+            position: relative;
+            vertical-align: middle;
+            width: 72px;
+            height: 62.7%;
+            float:left;
+            background: rgba(0,0,0,0);
+        }
+
+#circleT3 {
+    position: absolute;
+    background: #f00;
+    top: -255px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+#circleT2 {
+    position: absolute;
+    background: #f00;
+    top: -95px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+#circleT1 {
+    position: absolute;
+    background: #f00;
+    top: 60px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 1.0;
+}
+#circleO {
+    position: absolute;
+    background: #f00;
+    top: 217px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+#circleB1 {
+    position: absolute;
+    background: #f00;
+    top: 375px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+#circleB2 {
+    position: absolute;
+    background: #f00;
+    top: 530px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+#circleB3 {
+    position: absolute;
+    background: #f00;
+    top: 690px;
+    left: 17px;
+    width: 7px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+	<link href="style.css" rel="stylesheet" media="all" />
+	<title>Лабораторная работа №72</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="scroll.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+	<div class = "site-bar">
+		<div class = "site-minibar">
+  			<div class="theory-block">
+    			<a href="#theory" class="theory-button">Теория</a>
+  			</div>
+  			<div class="real-block">
+    			<a href="#virtual" class="real-button">Лабораторная работа</a>
+  			</div>
+  			<div class="report-block">
+      			<a href="#report" class="report-button">Отчет</a>
+  			</div>
+  		</div>
+	</div>
+
+	<div class = "site-header">
+		<div class = "text-title">
+			Лабораторная работа №72
+      <p class = "text-name">"Определение длины волны лазерного излучения с помощью дифракционной решетки"</p>
+      <img class = "img-main" src="device.png" height="300" alt="device">
+      <div class = "button-begin">
+          <a href="#theory"><i>Начать работу</i></a>
+      </div>
+		</div>
+      <div class = "text-help"> 
+          <p>На рисунке: экспериментальная установка</p>
+      </div>
+	</div>
+
+  <div class = "site-tutorial" id = "theory">
+    <div class = "text-title">
+      Перед началом ознакомьтесь с <br>
+      <a class = "text-underlined" href="lr80.doc" download>ТЕОРИЕЙ</a><br>
+      <img class = "img-main" src="book.png" width="700" alt="lorem">
+      <div class = "button-begin">
+          <a href="#real"><i>Приступить</i></a>
+      </div>
+      </div>
+    </div>
+
+    <div class = "site-virtual" id ="virtual">
+        <div class = "text-title-virtual">
+            ВИРТУАЛЬНАЯ УСТАНОВКА<br>
+        </div>
+
+        <div class="laser-left">
+        	<img class="laser-image" src="laser.png"></img>
+        </div>
+
+        <div class="web-middle" id="web-middle">
+            <div class="container">
+              
+              <div class="range-slider">
+                <span id="rs-bullet" class="rs-label"><img class="manImg" src="web.png"></img></span>
+                <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="105" oninput="sliderChange(this.value)">
+              </div>
+            </div>
+        </div>
+
+        <div class="ruler-right">
+        	<img class="ruler-image" width="100%" height="100%" src="ruler.png"></img>
+        	<div id="circleT3"></div>
+        	<div id="circleT2"></div>
+        	<div id="circleT1"></div>
+        	<div id="circleO"></div>
+        	<div id="circleB1"></div>
+        	<div id="circleB2"></div>
+        	<div id="circleB3"></div>
+        </div>
+        <div class="box-minmax">
+        	<output id="output">0 см</output>
+        </div>
+    </div>
+
+  <div class = "site-report" id = "report">
+    <div class = "text-title">
+      Полученные данные занесите в<br><br>
+      <a class = "text-underlined" href="report80.doc" download>ТАБЛИЦУ</a><br><br>
+      Произведите расчеты, оформите и нажмите "Отправить"<br>
+      Студенты ДО могут предоставить преподавателю отчет в печатном виде во время сессии.
+      <br><br><br><br>
+      <div class = "button-send">
+        <a href="http://ds.pstu.edu/mod/assign/view.php?id=48812&action=editsubmission"><i>Отправить</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class = "site-copyright">
+    <div class = "text-copyright">
+      ГВУЗ "Приазовский государственный технический университет"<br>
+      Факультет информационных технологий<br>
+      Кафедра физики &copy;2020
+    </div>
+  </div>
+
+
+  <script>
+var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+var webMiddle = document.getElementById("web-middle");
+
+
+var circleT1 = document.getElementById("circleT1");
+var circleT2 = document.getElementById("circleT2");
+var circleT3 = document.getElementById("circleT3");
+var circleB1 = document.getElementById("circleB1");
+var circleB2 = document.getElementById("circleB2");
+var circleB3 = document.getElementById("circleB3");
+
+rangeSlider.addEventListener("input", showSliderValue, false);
+
+function showSliderValue() {
+  // rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (webMiddle.clientWidth - 50) ) + "px";
+  circleT3.style.top = -255 + (bulletPosition * 1110 * 0.425) + "px";
+  circleT2.style.top = -95 + (bulletPosition * 1110 * 0.28) + "px";
+  circleT1.style.top = 60 + (bulletPosition * 1110 * 0.14) + "px";
+  circleB1.style.top = 375 - (bulletPosition * 1110 * 0.14) + "px";
+  circleB2.style.top = 530 - (bulletPosition * 1110 * 0.28) + "px";
+  circleB3.style.top = 690 - (bulletPosition * 1110 * 0.425) + "px";
+
+  circleT3.style.opacity = (-255 + (bulletPosition * 1100 * 0.425))/200;
+  circleT2.style.opacity = (-95 + (bulletPosition * 1100 * 0.28))/200;
+  circleT1.style.opacity = (60 + (bulletPosition * 1100 * 0.14))/200;
+  circleB1.style.opacity = (60 + (bulletPosition * 1100 * 0.14))/200;
+  circleB2.style.opacity = (-95 + (bulletPosition * 1100 * 0.28))/200;
+  circleB3.style.opacity = (-255 + (bulletPosition * 1100 * 0.425))/200;
+}
+
+function sliderChange(val) {
+    document.getElementById('output').innerHTML = val + " см";
+}
+document.getElementById('slider').value = 50;
+
+  </script>
+
+</body>
+</html>
+
+
+

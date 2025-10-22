@@ -1,0 +1,635 @@
+<!doctype html>
+<html  lang="en">
+
+<head>
+    <style>
+		*{ 
+		margin: 0; 
+		}
+		
+		body {
+		    font-family: Helvetica;
+		    font-size: 20px;
+		    min-width: 800px;
+		}
+
+
+        .text-title-virtual {
+            font-family: Helvetica;
+            width: 700px;
+            color: white;
+            text-align: center;
+            font-size: 30pt;
+            padding-top: 75px;
+            padding-bottom: 30px;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 2px;
+        }
+
+        .text-small {
+            font-family: Helvetica;
+            color: white;
+            text-align: center;
+            font-size: 17pt;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 1px;
+        }
+
+        .site-virtual {
+            width:100%;
+            height:700px;
+            background: gray url(plastic-bg.jpg) round;
+;
+        }
+        .full-device-box {
+            width: 100%;
+            height: 360px;
+            margin: 0 auto;
+        }
+        .hints-box {
+            width: 100%;
+            height: 130px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hints-box-left {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:left;
+        }
+        .hints-box-right {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:right;
+        }
+        .hints-box-middle {
+        	display: inline-block;
+            height: 100%;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .hints-box-topside {
+            float:left;
+            height: 70px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .hints-box-bottomside {
+            float:left;
+            height: 60px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .image-arrow {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .image-spin {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .light-left {
+            position: relative;
+            margin-top:120px;
+        	vertical-align: middle;
+            width: 50%;
+            height: 120px;
+            float:left;
+            background:rgba(0,0,0,0);
+/*background: -moz-linear-gradient(top, rgba(255,238,1,0) 23%, rgba(255,238,1,0.25) 35%, rgba(255,238,1,0.52) 41%, rgba(255,245,102,0.75) 46%, rgba(255,249,163,0.75) 49%, rgba(255,245,123,0.75) 51%, rgba(255,234,1,0.48) 57%, rgba(255,234,1,0.25) 62%, rgba(255,234,1,0) 75%);
+background: -webkit-linear-gradient(top, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+background: linear-gradient(to bottom, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffee01', endColorstr='#00ffea01',GradientType=0 ); */
+        }
+        .light-right {
+            position: relative;
+            margin-top:120px;
+        	vertical-align: middle;
+            width: 50%;
+            height: 120px;
+            float:left;
+            background:rgba(0,0,0,0);
+/*background: -moz-linear-gradient(top, rgba(1,192,255,0) 23%, rgba(1,192,255,0.25) 35%, rgba(1,192,255,0.52) 41%, rgba(102,217,255,0.75) 46%, rgba(163,232,255,0.75) 49%, rgba(123,223,255,0.75) 51%, rgba(1,196,255,0.48) 57%, rgba(1,196,255,0.25) 62%, rgba(1,196,255,0) 75%); 
+background: -webkit-linear-gradient(top, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+background: linear-gradient(to bottom, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0001c0ff', endColorstr='#0001c4ff',GradientType=0 ); */
+        }
+        .device-box {
+            width: 360px;
+            height: 360px;
+            margin: 0 auto;
+        }
+
+        .device-block-left {
+            width: 140px;
+            float:left;
+        }
+        .device-block-right {
+            width: 140px;
+            float:right;
+        }
+
+        .device-right {
+            height: 120px;
+		    transition: 2s ease;  
+            float:right;
+        }
+        .device-right:hover {
+            box-shadow: 0 0 10px rgba(255,121,215,0.5);
+		    transition: .5s ease;  
+        }
+        .device-left {
+            height: 120px;
+            float:left;
+        	transform: scale(-1, 1);
+		    transition: 2s ease;  
+        }
+        .device-left:hover {
+            box-shadow: 0 0 10px rgba(3,217,255,0.5);
+		    transition: .5s ease;  
+        }
+
+        .device-text-left {
+            height: 120px;
+            float:left;
+        }
+		
+		.draggable_wp {
+		    position: absolute;
+		    margin-left: 180px;
+		    margin-top: 180px;
+
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+		}
+        .handle {
+            position: absolute;
+            margin-left:-180px;
+            margin-top:-180px;
+            width: 360px;
+            height: 360px;
+        }
+        .layer {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+        }
+		
+        .hole {
+            position: absolute;
+            float:left;
+            width: 340px;
+            height: 340px;
+            background: black;
+            overflow: hidden;
+            border-radius: 180px;
+            margin:5px;
+        }
+        .lens {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 262px;
+            margin:40px;
+        }
+        .target {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+        }
+        .targetbox {
+            position: absolute;
+            float:left;
+            width: 70px;
+            height: 40px;
+            left:136px;
+            top:275px;
+            color: #FBFBFB;
+            text-align: center;
+        }
+        .move {
+            position: absolute;
+            float:left;
+            left:180px;
+            width: 720px;
+            height: 360px;
+        }
+        .move2 {
+            position: absolute;
+            float:left;
+            left:180px;
+            margin-left:-720px;
+            width: 720px;
+            height: 360px;
+        }
+
+		.n_p{
+
+  		}
+   		.f_p{
+   		    opacity: 0;
+   		}
+		.n_p2{
+
+  		}
+   		.f_p2{
+   		    opacity: 0;
+   		}
+   		.show{
+   		    opacity: 1;
+   		}
+
+		  @keyframes go-top-bottom {  
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  @-webkit-keyframes go-top-bottom {
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  .progress-verical {
+		    animation: go-top-bottom .7s infinite alternate;
+		    -webkit-animation: go-top-bottom .7s infinite alternate;
+		    position: relative;
+		  }
+
+
+		#st { 
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            background-color: black;
+
+		    transition:background .15s ease;   
+		}
+		.st { 
+            background-color: rgba(1, 1, 1, 1);
+		}
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+	<link href="style.css" rel="stylesheet" media="all" />
+	<title>Лабораторная работа №80</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="scroll.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+	<div class = "site-bar">
+		<div class = "site-minibar">
+  			<div class="theory-block">
+    			<a href="#theory" class="theory-button">Теорія</a>
+  			</div>
+  			<div class="real-block">
+    			<a href="#virtual" class="real-button">Лабораторна робота</a>
+  			</div>
+  			<div class="report-block">
+      			<a href="#report" class="report-button">Звіт</a>
+  			</div>
+  		</div>
+	</div>
+
+	<div class = "site-header">
+		<div class = "text-title">
+			Лабораторна робота №80
+      <p class = "text-name">"Вивчення спектру атома водню та визначення постійної Рідберга"</p>
+      <img class = "img-main" src="device.png" height="300" alt="device">
+      <div class = "button-begin">
+          <a href="#theory"><i>Почати роботу</i></a>
+      </div>
+		</div>
+      <div class = "text-help"> 
+          <p>На малюнку: спектроскоп</p>
+      </div>
+	</div>
+
+  <div class = "site-tutorial" id = "theory">
+    <div class = "text-title">
+      Перед початком ознайомтесь з <br>
+      <a class = "text-underlined" href="lr80.doc" download>ТЕОРІЄЮ</a><br>
+      <img class = "img-main" src="book.png" width="700" alt="lorem">
+      <div class = "button-begin">
+          <a href="#real"><i>Розпочати</i></a>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class = "site-virtual" id ="virtual">
+        <div class = "text-title-virtual">
+            ВІРТУАЛЬНА УСТАНОВКА<br>
+        </div>
+        <div class="full-device-box">
+        		<div class="light-left" id="light-left">
+        			<div class="device-block-left">
+        				<img class="device-left n_p" onClick="timerleft()" src="right.png">
+        				<p class="text-small">РТУТЬ</p>
+        			</div>
+        		</div>
+
+        		<div class="light-right" id="light-right">
+        		    <div class="device-block-right">
+        				<img class="device-right n_p" onClick="lightright()" src="right.png">
+        				<p class="text-small">ВОДЕНЬ</p>
+        			</div>
+        		</div>
+        	<div class="device-box">
+        	    <div class="hole">
+        	        <img class="move f_p" src="spectre.png">
+        	        <img class="move2 f_p2" src="spectre.png">
+        	    	<img class="move f_p show" src="spectre2.png"> 
+        	    	<img class="move2 f_p2 show" src="spectre2.png"> 
+        	        <div class="st" id="st">
+        	        </div>
+        	        <img class="lens" src="lens.png">
+        	        <img class="target" src="target.png">
+        	        <div class="targetbox">
+        	        	<p class="test">0</p>
+        	        </div>
+        	        <img class="layer" src="layer.png">
+        	        
+        	    </div>
+        		<div class="draggable_wp">
+        	        <img class="handle" src="knob.png">
+        		</div>
+        	
+        	</div>
+        </div>
+        <div class="hints-box">
+        	<div class="hints-box-left"> 
+        		<div class="hints-box-topside progress-verical"> 
+        	        <img class="image-arrow" src="arrow.png">
+        		</div>
+        		<div class="hints-box-bottomside"> 
+        			<p class="text-small">Натискайте</p>
+        		</div>
+        	</div>
+        	<div class="hints-box-middle"> 
+        		<div class="hints-box-topside"> 
+        	        <img class="image-spin" src="spin.png">
+        		</div>
+        		<div class="hints-box-bottomside"> 
+        			<p class="text-small">Повертайте</p>
+        		</div>
+        	</div>
+        	<div class="hints-box-right"> 
+        		<div class="hints-box-topside progress-verical"> 
+        	        <img class="image-arrow" src="arrow.png">
+        		</div>
+        		<div class="hints-box-bottomside"> 
+        			<p class="text-small">Натискайте</p>
+        		</div>
+        	</div>
+
+        </div>
+    </div>
+
+
+
+
+  <div class = "site-report" id = "report">
+    <div class = "text-title">
+      Отримані дані занесіть у<br><br>
+      <a class = "text-underlined" href="report80.doc" download>ТАБЛИЦЮ</a><br><br>
+      Зробіть розрахунки, оформіть та натисніть "Надіслати"<br>
+      Студенти ДО можуть надати викладачеві звіт у друкованому вигляді під час сесії.
+      <br><br><br><br>
+      <div class = "button-send">
+        <a href="http://ds.pstu.edu/mod/assign/view.php?id=48812&action=editsubmission"><i>Надіслати</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class = "site-copyright">
+    <div class = "text-copyright">
+      ДВНЗ "Приазовський державний технічний університет" <br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики &copy;2017
+    </div>
+  </div>
+
+
+  <script>
+    $(function () {
+    var dragging = false,
+        target_wp,
+        o_x, o_y, h_x, h_y, last_angle;
+
+
+    $('.handle').mousedown(function (e) {
+        h_x = e.pageX;
+        h_y = e.pageY; // clicked point
+        e.preventDefault();
+        e.stopPropagation();
+        dragging = true;
+        target_wp = $(e.target).closest('.draggable_wp');
+
+        if (!target_wp.data("origin")) target_wp.data("origin", {
+            left: target_wp.offset().left,
+            top: target_wp.offset().top
+        });
+        o_x = target_wp.data("origin").left;
+        o_y = target_wp.data("origin").top; // origin point
+        
+        last_angle = target_wp.data("last_angle") || 0;
+        last_anglet = target_wp.data("last_anglet") || 0;
+    })
+
+    $(document).mousemove(function (e) {
+        if (dragging == true) {
+            var s_x = e.pageX,
+                s_y = e.pageY; // start rotate point
+
+            if (s_x !== o_x && s_y !== o_y) { //start rotate
+                var s_rad = Math.atan2(s_y - o_y, s_x - o_x); // current to origin
+                s_rad -= Math.atan2(h_y - o_y, h_x - o_x); // handle to origin
+                s_rad += last_angle;
+                var degree = (s_rad * (180 / Math.PI));
+
+
+                target_wp.css('-moz-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-moz-transform-origin', '50% 50%');
+                target_wp.css('-webkit-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-webkit-transform-origin', '50% 50%');
+                target_wp.css('-o-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-o-transform-origin', '50% 50%');
+                target_wp.css('-ms-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-ms-transform-origin', '50% 50%');
+
+
+
+                $(".lens").css('-moz-transform', 'rotate(' + 3*Math.atan2(s_y, s_x) + 'deg)');
+                $(".lens").css('-moz-transform-origin', '50% 50%');
+                $(".lens").css('-webkit-transform', 'rotate(' + 3*Math.atan2(s_y, s_x) + 'deg)');
+                $(".lens").css('-webkit-transform-origin', '50% 50%');
+                $(".lens").css('-o-transform', 'rotate(' + 3*Math.atan2(s_y, s_x) + 'deg)');
+                $(".lens").css('-o-transform-origin', '50% 50%');
+                $(".lens").css('-ms-transform', 'rotate(' + 3*Math.atan2(s_y, s_x) + 'deg)');
+                $(".lens").css('-ms-transform-origin', '50% 50%');
+
+                $(".layer").css('-moz-transform', 'rotate(' + getRotationDegrees($('.draggable_wp')) + 'deg)');
+                $(".layer").css('-moz-transform-origin', '50% 50%');
+                $(".layer").css('-webkit-transform', 'rotate(' + getRotationDegrees($('.draggable_wp')) + 'deg)');
+                $(".layer").css('-webkit-transform-origin', '50% 50%');
+                $(".layer").css('-o-transform', 'rotate(' + getRotationDegrees($('.draggable_wp')) + 'deg)');
+                $(".layer").css('-o-transform-origin', '50% 50%');
+                $(".layer").css('-ms-transform', 'rotate(' + getRotationDegrees($('.draggable_wp')) + 'deg)');
+                $(".layer").css('-ms-transform-origin', '50% 50%');
+        
+
+                $(".move").css('left', 2 * getRotationDegrees($('.draggable_wp')) + 180);
+                $(".move2").css('left', 2 * getRotationDegrees($('.draggable_wp')) + 180);
+
+
+                $(".test").html((getRotationDegrees($('.draggable_wp')))*10)
+                $(".test2").html((getRotationDegrees($('.draggable_wp')))*10)
+
+            }
+        }
+    }) // end mousemove
+    
+    $(document).mouseup(function (e) {
+        dragging = false
+        var s_x = e.pageX,
+            s_y = e.pageY;
+        
+        // Saves the last angle for future iterations
+        var s_rad = Math.atan2(s_y - o_y, s_x - o_x); // current to origin
+        s_rad -= Math.atan2(h_y - o_y, h_x - o_x); // handle to origin
+        s_rad += last_angle;
+        target_wp.data("last_angle", s_rad);
+    })
+
+
+function getRotationDegrees(obj) {
+  var matrix = obj.css("-webkit-transform") ||
+  obj.css("-moz-transform")    ||
+  obj.css("-ms-transform")     ||
+  obj.css("-o-transform")      ||
+  obj.css("transform");
+  if(matrix !== 'none') {
+    var values = matrix.split('(')[1].split(')')[0].split(',');
+    var a = values[0];
+    var b = values[1];
+    var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+  } else { var angle = 0; }
+  return (angle < 0) ? angle +=360 : angle;
+}
+})
+
+function lightright() {
+	document.getElementById('light-left').style.background='rgba(0,0,0,0)'
+	document.getElementById('light-right').style.background='linear-gradient(to bottom, rgba(255,121,215,0) 24%,rgba(255,121,215,0.45) 37%,rgba(255,200,240,0.85) 48%,rgba(255,214,245,0.85) 50%,rgba(255,194,239,0.85) 53%,rgba(255,121,215,0.45) 64%,rgba(255,121,215,0) 79%)'
+		var start = Date.now();
+		var timer = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 300) {
+		    clearInterval(timer);
+		    return;
+		  }
+		  draw(timePassed);
+		}, 100);
+		var timer2 = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 600) {
+		    clearInterval(timer2);
+		    return;
+		  }
+		  draw2(timePassed);
+		}, 200);
+		
+		function draw(timePassed) {
+			document.getElementById('light-right').style.background='rgba(0,0,0,0)'
+			
+		}
+		function draw2(timePassed) {
+		document.getElementById('light-right').style.background='linear-gradient(to bottom, rgba(255,121,215,0) 24%,rgba(255,121,215,0.45) 37%,rgba(255,200,240,0.85) 48%,rgba(255,214,245,0.85) 50%,rgba(255,194,239,0.85) 53%,rgba(255,121,215,0.45) 64%,rgba(255,121,215,0) 79%)'
+			
+		}
+		new Audio('click-right.wav').play(); return false;
+}
+
+function timerleft() {
+		document.getElementById('light-right').style.background='rgba(0,0,0,0)'
+		document.getElementById('light-left').style.background='llinear-gradient(to bottom, rgba(0,141,184,0) 24%,rgba(0,141,184,0.45) 37%,rgba(3,205,244,0.85) 48%,rgba(3,217,255,0.85) 50%,rgba(2,201,240,0.85) 53%,rgba(0,141,184,0.45) 64%,rgba(0,141,184,0) 79%)'
+
+
+		var start = Date.now();
+		var timer = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 300) {
+		    clearInterval(timer);
+		    return;
+		  }
+		  draw(timePassed);
+		}, 100);
+		var timer2 = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 600) {
+		    clearInterval(timer2);
+		    return;
+		  }
+		  draw2(timePassed);
+		}, 200);
+		
+		function draw(timePassed) {
+			document.getElementById('light-left').style.background='rgba(0,0,0,0)'
+			
+		}
+		function draw2(timePassed) {
+			document.getElementById('light-left').style.background='linear-gradient(to bottom, rgba(0,141,184,0) 24%,rgba(0,141,184,0.45) 37%,rgba(3,205,244,0.85) 48%,rgba(3,217,255,0.85) 50%,rgba(2,201,240,0.85) 53%,rgba(0,141,184,0.45) 64%,rgba(0,141,184,0) 79%)'
+			
+		}
+		new Audio('click-left.wav').play(); return false;
+		
+
+}
+
+
+   $(function(){
+      $(".n_p").on("click", 
+      	function() {
+      		var i = $(".n_p").index(this);
+      		$(".f_p").not($(".f_p").eq(i).addClass("show")).removeClass("show")
+      		$(".f_p2").not($(".f_p2").eq(i).addClass("show")).removeClass("show")
+
+      		$("#st").css("background", "rgba(0, 0, 0, 1)");
+      		setTimeout(function () { $("#st").css("background", "rgba(0, 0, 0, 0)") }, 900);
+
+			})
+   })
+
+  </script>
+
+</body>
+</html>
+
+
+

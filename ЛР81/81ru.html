@@ -1,0 +1,745 @@
+<!doctype html>
+<html  lang="en">
+
+<head>
+    <style>
+		*{ 
+		margin: 0; 
+		}
+		
+		body {
+		    font-family: Helvetica;
+		    font-size: 20px;
+		    min-width: 800px;
+		}
+
+.language-button {
+    position: fixed; 
+    right:5px; 
+    top:5px; 
+    z-index:500;
+}
+
+        .text-title-virtual {
+            font-family: Helvetica;
+            width: 700px;
+            color: white;
+            text-align: center;
+            font-size: 30pt;
+            padding-top: 75px;
+            padding-bottom: 30px;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 2px;
+        }
+
+        .text-small {
+            font-family: Helvetica;
+            color: white;
+            text-align: center;
+            font-size: 17pt;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 1px;
+        }
+
+        .site-virtual {
+            width:100%;
+            height:700px;
+            background: gray url(plastic-bg.jpg) round;
+;
+        }
+        .full-device-box {
+            width: 100%;
+            height: 360px;
+            margin: 0 auto;
+        }
+        .hints-box {
+            width: 100%;
+            height: 130px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hints-box-left {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:left;
+        }
+        .hints-box-right {
+        	display: inline-block;
+            height: 100%;
+            width: 150px;
+            float:right;
+        }
+        .hints-box-middle {
+        	display: inline-block;
+            height: 100%;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .hints-box-topside {
+            float:left;
+            height: 70px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .hints-box-bottomside {
+            float:left;
+            height: 60px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .image-arrow {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .image-spin {
+            margin: 0 auto;
+            height: 60px;
+        }
+        .light-left {
+            position: relative;
+            margin-top:30px;
+        	vertical-align: middle;
+            width: 50%;
+            height: 300px;
+            float:left;
+/*background: -moz-linear-gradient(top, rgba(255,238,1,0) 23%, rgba(255,238,1,0.25) 35%, rgba(255,238,1,0.52) 41%, rgba(255,245,102,0.75) 46%, rgba(255,249,163,0.75) 49%, rgba(255,245,123,0.75) 51%, rgba(255,234,1,0.48) 57%, rgba(255,234,1,0.25) 62%, rgba(255,234,1,0) 75%);
+background: -webkit-linear-gradient(top, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+background: linear-gradient(to bottom, rgba(255,238,1,0) 23%,rgba(255,238,1,0.25) 35%,rgba(255,238,1,0.52) 41%,rgba(255,245,102,0.75) 46%,rgba(255,249,163,0.75) 49%,rgba(255,245,123,0.75) 51%,rgba(255,234,1,0.48) 57%,rgba(255,234,1,0.25) 62%,rgba(255,234,1,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffee01', endColorstr='#00ffea01',GradientType=0 ); */
+        }
+        .light-right {
+            position: relative;
+        	vertical-align: middle;
+            width: 30%;
+            height: 480px;
+            float:left;
+            margin-left: 20%; 
+/*background: -moz-linear-gradient(top, rgba(1,192,255,0) 23%, rgba(1,192,255,0.25) 35%, rgba(1,192,255,0.52) 41%, rgba(102,217,255,0.75) 46%, rgba(163,232,255,0.75) 49%, rgba(123,223,255,0.75) 51%, rgba(1,196,255,0.48) 57%, rgba(1,196,255,0.25) 62%, rgba(1,196,255,0) 75%); 
+background: -webkit-linear-gradient(top, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+background: linear-gradient(to bottom, rgba(1,192,255,0) 23%,rgba(1,192,255,0.25) 35%,rgba(1,192,255,0.52) 41%,rgba(102,217,255,0.75) 46%,rgba(163,232,255,0.75) 49%,rgba(123,223,255,0.75) 51%,rgba(1,196,255,0.48) 57%,rgba(1,196,255,0.25) 62%,rgba(1,196,255,0) 75%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0001c0ff', endColorstr='#0001c4ff',GradientType=0 ); */
+        }
+        .device-box {
+            width: 360px;
+            height: 360px;
+            margin: 0 auto;
+        }
+
+        .device-block-left {
+            width: 60%;
+            float:left;
+            text-align: center;
+        }
+        .device-block-right {
+            width: 140px;
+            float:right;
+        }
+
+        .device-right {
+            height: 120px;
+		    transition: 2s ease;  
+            float:right;
+        }
+        .device-right:hover {
+            box-shadow: 0 0 10px rgba(255,121,215,0.5);
+		    transition: .5s ease;  
+        }
+
+
+		.test {
+		  position: absolute;
+		  margin-left:20px;
+		}
+		.b-value {
+		  position: absolute;
+          margin-left:66px;
+          margin-top:-5px;
+		  font-size: 28px;
+		}
+
+		.amperage-range-block {
+		  position: absolute;
+		  background: linear-gradient(to top, dimgray, gray);
+		  color:white;
+		  text-align: center;
+		  height: 35px;
+		  width: 135px; 
+		  border-radius: 5px;
+		  margin-top:83px;
+		  margin-left:25px;
+		}
+		.amperage-value-block {
+		  position: absolute;
+		  color:lime;
+		  text-align: left;
+		  font-family: digital, Helvetica;
+		  font-size: 60px;
+		  height: 80px;
+		  width: 160px; 
+		  border-radius: 5px;
+		  margin-top:19px;
+		  margin-left:17px;
+		}
+		.amp-block {
+		  position: absolute;
+		  color:lime;
+		  text-align: left;
+		  font-family: digital, Helvetica;
+		  font-size: 45px;
+		  height: 50px;
+		  width: 50px; 
+		  margin-top:30px;
+		  margin-left:150px;
+		}
+
+        .volt-block {
+          position: absolute;
+          color:yellow;
+          text-align: left;
+          font-family: digital, Helvetica;
+          font-size: 45px;
+          height: 50px;
+          width: 50px; 
+          margin-top:30px;
+          margin-left:150px;
+        }
+
+        .voltage-value-block {
+          position: absolute;
+          color:yellow;
+          text-align: left;
+          font-family: digital, Helvetica;
+          font-size: 60px;
+          height: 80px;
+          width: 160px; 
+          border-radius: 5px;
+          margin-top:19px;
+          margin-left:17px;
+        }
+
+		#voltsvalue, #ampvalue, #ampersvalue {
+		  font-family: digital, Helvetica;
+		}
+
+        .voltmetr-block-left {
+            display:block;
+            width: 190px;
+            margin: 0px auto;
+            margin-top:180px;
+        }
+
+        .ampermetr-block-left {
+        	display:block;
+            width: 190px;
+            margin: 0 auto;
+        }
+
+        .device-left {
+    		position: absolute;
+        	display:block;
+            width: 190px;
+            margin: 0 auto;
+        }
+
+        .graph {
+            position: absolute;
+            display:block;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .device-text-left {
+            height: 120px;
+            float:left;
+        }
+		
+		.draggable_wp {
+		    position: absolute;
+		    margin-left: 180px;
+		    margin-top: 180px;
+
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+		}
+        .handle {
+            position: absolute;
+            margin-left:-180px;
+            margin-top:-180px;
+            width: 360px;
+            height: 360px;
+        }
+        .layer {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+        }
+		
+        .hole {
+            position: absolute;
+            float:left;
+            width: 340px;
+            height: 340px;
+            background: black;
+            overflow: hidden;
+            border-radius: 180px;
+            margin:5px;
+        }
+        .lens {
+            position: absolute;
+            float:left;
+            width: 310px;
+            height: 310px;
+            margin:20px;
+        }
+
+        .lamp-black {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+        }
+        .lamp-red {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+            opacity:0;
+        }
+        .temp-black {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+        }
+        .temp-red {
+            position: absolute;
+            float:left;
+            width: 262px;
+            height: 270px;
+            margin:40px;
+            opacity:0.2;
+        }
+        .targetbox {
+            position: absolute;
+		  	font-family: digital, Helvetica;
+		  	font-size: 30px;
+            float:left;
+            width: 70px;
+            height: 40px;
+            left:136px;
+            top:275px;
+            color: red;
+            text-align: center;
+        }
+        .move {
+            position: absolute;
+            float:left;
+            left:180px;
+            width: 720px;
+            height: 360px;
+        }
+        .move2 {
+            position: absolute;
+            float:left;
+            left:180px;
+            margin-left:-720px;
+            width: 720px;
+            height: 360px;
+        }
+
+   		.f_p{
+   		    opacity: 0;
+   		}
+   		.f_p2{
+   		    opacity: 0;
+   		}
+   		.show{
+   		    opacity: 1;
+   		}
+
+		  @keyframes go-top-bottom {  
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  @-webkit-keyframes go-top-bottom {
+		    from {
+		      top: -5px;              
+		    }
+		    to {
+		      top: 5px; 
+		    }
+		  }
+		  .progress-verical {
+		    animation: go-top-bottom .7s infinite alternate;
+		    -webkit-animation: go-top-bottom .7s infinite alternate;
+		    position: relative;
+		  }
+
+
+		#st { 
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            background-color: black;
+
+		    transition:background .15s ease;   
+		}
+		.st { 
+            background-color: rgba(1, 1, 1, 1);
+		}
+
+    </style>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+	<link href="style.css" rel="stylesheet" media="all" />
+	<title>Лабораторная работа №81</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="scroll.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+  <div class = "site-bar">
+    <div class = "site-minibar">
+        <div class="theory-block">
+          <a href="#theory" class="theory-button">Теория</a>
+        </div>
+        <div class="real-block">
+          <a href="#real" class="real-button">Лабораторная работа</a>
+        </div>
+        <div class="report-block">
+            <a href="#report" class="report-button">Отчет</a>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="language-button">
+    <a href="81ua.html" >
+      <img src="Ukraine.png" alt="Українська" title= "мова" height="55px">
+    </a>
+  </div>
+
+	<div class = "site-header">
+		<div class = "text-title">
+			Лабораторная работа №81
+            <p class = "text-name">"Изучение законов теплового излучения"</p>
+            <img class = "img-main" src="device.png" height="350" alt="device">
+            <div class = "button-begin">
+                <a href="#theory"><i>Начать работу</i></a>
+            </div>
+		</div>
+      <div class = "text-help"> 
+          <p>На рисунке: пирометрическая установка</p>
+      </div>
+	</div>
+
+
+
+
+  <div class = "site-tutorial" id = "theory">
+    <div class = "text-title">
+      Перед началом ознакомьтесь с <br>
+      <a class = "text-underlined" href="81ru.doc" download>ТЕОРИЕЙ</a><br>
+      <img class = "img-main" src="book.png" width="700" alt="lorem">
+      <div class = "button-begin">
+          <a href="#real"><i>Приступить</i></a>
+      </div>
+      </div>
+    </div>
+
+
+    <div class = "site-virtual" id ="virtual">
+        <div class = "text-title-virtual">
+            ВИРТУАЛЬНАЯ УСТАНОВКА<br>
+        </div>
+        <div class="full-device-box">
+
+        	<div class="light-left" id="light-left">
+        		<div class="device-block-left">
+        			<div class="ampermetr-block-left">
+
+        				<img class="device-left" src="equipment.png">
+	
+          				<div class="amperage-value-block">
+          				  <output id="ampvalue">0.1</output>
+          				</div>
+          				<div class="amp-block">
+          				  A
+          				</div>
+
+                        <div class="amperage-range-block">
+                          Амперметр<br>
+                          <input class="bar" type="range" id="oms" min="0.15" max="0.4" value="0" step="0.005" onchange="ampvalue.value=value" oninput="                omsFunction(this.value)"/>
+                        </div>
+        			</div>
+
+
+                    <div class="voltmetr-block-left">
+
+                        <img class="device-left" src="equipment.png">
+    
+                        <div class="voltage-value-block">
+                          <output class="voltsvalue">0</output>
+                        </div>
+                        <div class="volt-block">
+                          V
+                        </div>
+
+                        <div class="amperage-range-block">
+                          Вольтметр<br>
+                        </div>
+                    </div>
+        		</div>
+        	</div>
+
+            <div class="light-right" id="light-right">
+
+                <img class="graph" src="graph.png">
+            </div>
+
+        	<div class="device-box">
+        	    <div class="hole">
+        	        <div class="st" id="st">
+        	        </div>
+        	        <img class="temp-black" src="temp-black.png">
+        	        <img class="temp-red" src="temp-red.png">
+        	        <img class="lamp-black" src="lamp-black.png">
+        	        <img class="lamp-red" src="lamp-red.png">
+        	        <img class="lens" src="lens.png">
+        	        <div class="targetbox">
+        	        	<p class="test">0</p>
+        	        	<p class="b-value">°C</p>
+        	        </div>
+        	        <!--<img class="layer" src="layer.png">-->
+        	        
+        	    </div>
+        		<div class="draggable_wp">
+        	        <img class="handle" src="knob.png">
+        		</div>
+        	
+        	</div>
+        </div>
+
+    </div>
+
+
+  <div class = "site-report" id = "report">
+    <div class = "text-title">
+      Полученные данные занесите в<br><br>
+      <a class = "text-underlined" href="report.docx" download>ТАБЛИЦУ</a><br><br>
+      Произведите расчеты, оформите и нажмите "Отправить"<br>
+      Студенты ДО могут предоставить преподавателю отчет в печатном виде во время сессии.
+      <br><br><br><br>
+      <div class = "button-send">
+        <a href="https://ds.pstu.edu/mod/assign/view.php?id=57875&forceview=1"><i>Отправить</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class = "site-copyright">
+    <div class = "text-copyright">
+      ГВУЗ "Приазовский государственный технический университет"<br>
+      Факультет информационных технологий<br>
+      Кафедра физики &copy;2019
+    </div>
+  </div>
+
+  <embed src="beep.wav" autostart="true" width="0" height="0" id="sound1" enablejavascript="true">
+
+  <script>
+
+    var temperature = 0
+    var volts = 0
+    var ampers = 0
+    var play = true
+
+    function playSound() {
+
+         if (play == true && temperature == temp) {
+
+             beep();
+             play = false
+         } else {
+
+             play = true
+         }
+    }
+
+        function omsFunction(myValue){
+        	var pointNum = parseFloat(myValue)
+
+          	document.getElementById("ampvalue").innerHTML = pointNum;
+            ampers = pointNum
+            volts = (pointNum * 450 - 42).toFixed(2)
+
+            $(".lamp-red").css('opacity', pointNum*3 - 0.2);
+            $(".voltsvalue").html(volts)
+        }
+
+    $(function () {
+    var dragging = false,
+        target_wp,
+        o_x, o_y, h_x, h_y, last_angle;
+
+
+    $('.handle').mousedown(function (e) {
+        h_x = e.pageX;
+        h_y = e.pageY; // clicked point
+        e.preventDefault();
+        e.stopPropagation();
+        dragging = true;
+        target_wp = $(e.target).closest('.draggable_wp');
+
+        if (!target_wp.data("origin")) target_wp.data("origin", {
+            left: target_wp.offset().left,
+            top: target_wp.offset().top
+        });
+        o_x = target_wp.data("origin").left;
+        o_y = target_wp.data("origin").top; // origin point
+        
+        last_angle = target_wp.data("last_angle") || 0;
+        last_anglet = target_wp.data("last_anglet") || 0;
+    })
+
+    var temp = 1000
+
+
+    $(document).mousemove(function (e) {
+        if (dragging == true) {
+            var s_x = e.pageX,
+                s_y = e.pageY; // start rotate point
+
+            if (s_x !== o_x && s_y !== o_y) { //start rotate
+                var s_rad = Math.atan2(s_y - o_y, s_x - o_x); // current to origin
+                s_rad -= Math.atan2(h_y - o_y, h_x - o_x); // handle to origin
+                s_rad += last_angle;
+                var degree = (s_rad * (180 / Math.PI));
+
+                target_wp.css('-moz-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-moz-transform-origin', '50% 50%');
+                target_wp.css('-webkit-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-webkit-transform-origin', '50% 50%');
+                target_wp.css('-o-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-o-transform-origin', '50% 50%');
+                target_wp.css('-ms-transform', 'rotate(' + degree + 'deg)');
+                target_wp.css('-ms-transform-origin', '50% 50%');
+
+                $(".temp-red").css('opacity', (getRotationDegrees($('.draggable_wp')))/360);
+
+                temperature = ((getRotationDegrees($('.draggable_wp')))/3 * 7.5 + 610).toFixed()
+                //volts = ((getRotationDegrees($('.draggable_wp')))/3).toFixed()
+
+                $(".test").html(temperature)
+                //$(".voltsvalue").html(volts)
+
+                if ((play == true && temperature == 960 && ampers == 0.200) ||
+                    (play == true && temperature == 1080 && ampers == 0.225) ||
+                    (play == true && temperature == 1160 && ampers == 0.250) ||
+                    (play == true && temperature == 1240 && ampers == 0.275) ||
+                    (play == true && temperature == 1310 && ampers == 0.300) ||
+                    (play == true && temperature == 1360 && ampers == 0.325) ||
+                    (play == true && temperature == 1480 && ampers == 0.350)) {
+        
+                    beep();
+                    play = false
+                } else {
+        
+                    play = true
+                }
+            }
+        }
+    }) // end mousemove
+    
+    $(document).mouseup(function (e) {
+        dragging = false
+        var s_x = e.pageX,
+            s_y = e.pageY;
+        
+        // Saves the last angle for future iterations
+        var s_rad = Math.atan2(s_y - o_y, s_x - o_x); // current to origin
+        s_rad -= Math.atan2(h_y - o_y, h_x - o_x); // handle to origin
+        s_rad += last_angle;
+        target_wp.data("last_angle", s_rad);
+    })
+
+
+function beep() {
+    var snd = new Audio("data:audio/wav;base64,//uQRAAAAWMSLwUIYAAsYkXgoQwAEaYLWfkWgAI0wWs/ItAAAGDgYtAgAyN+QWaAAihwMWm4G8QQRDiMcCBcH3Cc+CDv/7xA4Tvh9Rz/y8QADBwMWgQAZG/ILNAARQ4GLTcDeIIIhxGOBAuD7hOfBB3/94gcJ3w+o5/5eIAIAAAVwWgQAVQ2ORaIQwEMAJiDg95G4nQL7mQVWI6GwRcfsZAcsKkJvxgxEjzFUgfHoSQ9Qq7KNwqHwuB13MA4a1q/DmBrHgPcmjiGoh//EwC5nGPEmS4RcfkVKOhJf+WOgoxJclFz3kgn//dBA+ya1GhurNn8zb//9NNutNuhz31f////9vt///z+IdAEAAAK4LQIAKobHItEIYCGAExBwe8jcToF9zIKrEdDYIuP2MgOWFSE34wYiR5iqQPj0JIeoVdlG4VD4XA67mAcNa1fhzA1jwHuTRxDUQ//iYBczjHiTJcIuPyKlHQkv/LHQUYkuSi57yQT//uggfZNajQ3Vmz+Zt//+mm3Wm3Q576v////+32///5/EOgAAADVghQAAAAA//uQZAUAB1WI0PZugAAAAAoQwAAAEk3nRd2qAAAAACiDgAAAAAAABCqEEQRLCgwpBGMlJkIz8jKhGvj4k6jzRnqasNKIeoh5gI7BJaC1A1AoNBjJgbyApVS4IDlZgDU5WUAxEKDNmmALHzZp0Fkz1FMTmGFl1FMEyodIavcCAUHDWrKAIA4aa2oCgILEBupZgHvAhEBcZ6joQBxS76AgccrFlczBvKLC0QI2cBoCFvfTDAo7eoOQInqDPBtvrDEZBNYN5xwNwxQRfw8ZQ5wQVLvO8OYU+mHvFLlDh05Mdg7BT6YrRPpCBznMB2r//xKJjyyOh+cImr2/4doscwD6neZjuZR4AgAABYAAAABy1xcdQtxYBYYZdifkUDgzzXaXn98Z0oi9ILU5mBjFANmRwlVJ3/6jYDAmxaiDG3/6xjQQCCKkRb/6kg/wW+kSJ5//rLobkLSiKmqP/0ikJuDaSaSf/6JiLYLEYnW/+kXg1WRVJL/9EmQ1YZIsv/6Qzwy5qk7/+tEU0nkls3/zIUMPKNX/6yZLf+kFgAfgGyLFAUwY//uQZAUABcd5UiNPVXAAAApAAAAAE0VZQKw9ISAAACgAAAAAVQIygIElVrFkBS+Jhi+EAuu+lKAkYUEIsmEAEoMeDmCETMvfSHTGkF5RWH7kz/ESHWPAq/kcCRhqBtMdokPdM7vil7RG98A2sc7zO6ZvTdM7pmOUAZTnJW+NXxqmd41dqJ6mLTXxrPpnV8avaIf5SvL7pndPvPpndJR9Kuu8fePvuiuhorgWjp7Mf/PRjxcFCPDkW31srioCExivv9lcwKEaHsf/7ow2Fl1T/9RkXgEhYElAoCLFtMArxwivDJJ+bR1HTKJdlEoTELCIqgEwVGSQ+hIm0NbK8WXcTEI0UPoa2NbG4y2K00JEWbZavJXkYaqo9CRHS55FcZTjKEk3NKoCYUnSQ0rWxrZbFKbKIhOKPZe1cJKzZSaQrIyULHDZmV5K4xySsDRKWOruanGtjLJXFEmwaIbDLX0hIPBUQPVFVkQkDoUNfSoDgQGKPekoxeGzA4DUvnn4bxzcZrtJyipKfPNy5w+9lnXwgqsiyHNeSVpemw4bWb9psYeq//uQZBoABQt4yMVxYAIAAAkQoAAAHvYpL5m6AAgAACXDAAAAD59jblTirQe9upFsmZbpMudy7Lz1X1DYsxOOSWpfPqNX2WqktK0DMvuGwlbNj44TleLPQ+Gsfb+GOWOKJoIrWb3cIMeeON6lz2umTqMXV8Mj30yWPpjoSa9ujK8SyeJP5y5mOW1D6hvLepeveEAEDo0mgCRClOEgANv3B9a6fikgUSu/DmAMATrGx7nng5p5iimPNZsfQLYB2sDLIkzRKZOHGAaUyDcpFBSLG9MCQALgAIgQs2YunOszLSAyQYPVC2YdGGeHD2dTdJk1pAHGAWDjnkcLKFymS3RQZTInzySoBwMG0QueC3gMsCEYxUqlrcxK6k1LQQcsmyYeQPdC2YfuGPASCBkcVMQQqpVJshui1tkXQJQV0OXGAZMXSOEEBRirXbVRQW7ugq7IM7rPWSZyDlM3IuNEkxzCOJ0ny2ThNkyRai1b6ev//3dzNGzNb//4uAvHT5sURcZCFcuKLhOFs8mLAAEAt4UWAAIABAAAAAB4qbHo0tIjVkUU//uQZAwABfSFz3ZqQAAAAAngwAAAE1HjMp2qAAAAACZDgAAAD5UkTE1UgZEUExqYynN1qZvqIOREEFmBcJQkwdxiFtw0qEOkGYfRDifBui9MQg4QAHAqWtAWHoCxu1Yf4VfWLPIM2mHDFsbQEVGwyqQoQcwnfHeIkNt9YnkiaS1oizycqJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");  
+    snd.play();
+}
+
+function getRotationDegrees(obj) {
+  var matrix = obj.css("-webkit-transform") ||
+  obj.css("-moz-transform")    ||
+  obj.css("-ms-transform")     ||
+  obj.css("-o-transform")      ||
+  obj.css("transform");
+  if(matrix !== 'none') {
+    var values = matrix.split('(')[1].split(')')[0].split(',');
+    var a = values[0];
+    var b = values[1];
+    var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+  } else { var angle = 0; }
+  return (angle < 0) ? angle +=360 : angle;
+}
+})
+
+function lightright() {
+	document.getElementById('light-left').style.background='rgba(0,0,0,0)'
+	document.getElementById('light-right').style.background='linear-gradient(to bottom, rgba(255,121,215,0) 24%,rgba(255,121,215,0.45) 37%,rgba(255,200,240,0.85) 48%,rgba(255,214,245,0.85) 50%,rgba(255,194,239,0.85) 53%,rgba(255,121,215,0.45) 64%,rgba(255,121,215,0) 79%)'
+		var start = Date.now();
+		var timer = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 300) {
+		    clearInterval(timer);
+		    return;
+		  }
+		  draw(timePassed);
+		}, 100);
+		var timer2 = setInterval(function() {
+		  var timePassed = Date.now() - start;		
+		  if (timePassed >= 600) {
+		    clearInterval(timer2);
+		    return;
+		  }
+		  draw2(timePassed);
+		}, 200);
+		
+		function draw(timePassed) {
+			document.getElementById('light-right').style.background='rgba(0,0,0,0)'
+			
+		}
+		function draw2(timePassed) {
+		document.getElementById('light-right').style.background='linear-gradient(to bottom, rgba(255,121,215,0) 24%,rgba(255,121,215,0.45) 37%,rgba(255,200,240,0.85) 48%,rgba(255,214,245,0.85) 50%,rgba(255,194,239,0.85) 53%,rgba(255,121,215,0.45) 64%,rgba(255,121,215,0) 79%)'
+			
+		}
+		new Audio('click-right.wav').play(); return false;
+}
+
+
+  </script>
+
+</body>
+</html>
+
+
+
