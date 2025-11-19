@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выполнение | ГВУЗ ПГТУ</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" href="../img/pstu_logo.png" />
+  </head>
+  <body>
+    <main>
+      <a class="back" href="../">
+        <img src="../img/back-button.png" alt="Вернуться назад" height="36" />
+      </a>
+
+      <div class="flex-row">
+        <button class="button slider">Включить устройство</button>
+        <button class="button button-ocular">Посмотреть в окуляр</button>
+      </div>
+      <div class="slider-container">
+        <img src="../img/slider-modif-transp.png" alt="" class="slider-img" />
+        <input type="range" class="range" step="1" min="1" max="4" value="1" />
+        <button class="slider-btn" type="button"></button>
+        <button class="ocular-btn" type="button"></button>
+      </div>
+    </main>
+
+    <div class="modal">
+      <div class="ocular-container">
+        <img
+          src="../img/ocular.png"
+          alt="Oculus"
+          class="ocular"
+          draggable="false"
+        />
+        <img src="../img/interference-2.jpg" alt="" class="filter-img" />
+        <img src="../img/scale-3.png" alt="" class="scale" />
+      </div>
+      <input
+        type="range"
+        name="scale"
+        class="scaleRange"
+        min="-90"
+        max="+90"
+        step="0.5"
+        value="0"
+      />
+      <div class="filter-container">
+        <label class="select" for="slct">
+          <select required="required" name="filter" class="filter">
+            <option value="white" selected>белый</option>
+            <option value="blue">синий</option>
+            <option value="green">зелёный</option>
+            <option value="red">красный</option>
+          </select>
+          <svg>
+            <use xlink:href="#select-arrow-down"></use>
+          </svg>
+        </label>
+        <svg class="sprites">
+          <symbol id="select-arrow-down" viewbox="0 0 10 6">
+            <polyline points="1 1 5 5 9 1"></polyline>
+          </symbol>
+        </svg>
+      </div>
+      <img src="../img/close-button.png" alt="" class="close-btn" />
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/script_ru.js"></script>
+  </body>
+</html>
