@@ -1,81 +1,86 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Лабораторна робота №76 | ДВНЗ ПДТУ</title>
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="icon" href="./img/pstu_logo.png" />
-  </head>
-  <body>
-    <div id="author">
-      <img src="./img/info.png" alt="Про автора" width="36px" />
-    </div>
-    <main>
-      <div class="heading-container">
-        <h1 class="first">Лабораторна робота №76</h1>
-        <h1 class="second">
-          Визначення довжини світлової хвилі за допомогою біпризми Френеля
-        </h1>
 
-        <div class="flex-column centered">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна робота №76 | ДВНЗ ПДТУ</title>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="icon" href="./img/pstu_logo.png" />
+</head>
 
-          <a class="button" download href="./documents/Лаб76_теорія_укр.docx">
-            Основні теоретичні <br />
-            положення
-          </a>
+<body>
+  <div id="author">
+    <img src="./img/info.png" alt="Про автора" width="36px" />
+  </div>
+  <main>
+    <div class="heading-container">
+      <h1 class="first">Лабораторна робота №76</h1>
+      <h1 class="second">
+        Визначення довжини світлової хвилі за допомогою біпризми Френеля
+      </h1>
 
-          <a class="button" download href="./documents/Лаб76_практика_укр.docx">
-            Методика вимірювань, <br />
-            обробки результатів
-          </a>
+      <div class="flex-column centered">
 
-          <a class="button" href="./main.html"> Перейти до виконання </a>
-          <a class="button" href="./instructions.html">
-            Довідка з виконання <br />
-            віртуальної роботи
-          </a>
+        <a class="button" download href="./documents/Лаб76_теорія_укр.docx">
+          Основні теоретичні <br />
+          положення
+        </a>
 
-        </div>
-      </div>
-    </main>
+        <a class="button" download href="./documents/Лаб76_практика_укр.docx">
+          Методика вимірювань, <br />
+          обробки результатів
+        </a>
 
-    <div class="modal">
-      <div class="modal-dim">
-        <img
-          src="./img/close-button.png"
-          alt=""
-          width="36"
-          height="36"
-          class="close-btn"
-        />
-      </div>
-      <div class="modal-inner">
-        <h2>Про автора</h2>
-        <p>
-          Віртуальну лабораторну роботу розробив студент групи КН-20(2)
-          Шевченко Артем, науковий керівник проєкту – Цветкова Олена Валентинівна.
-        </p>
+        <a class="button" href="./main.html"> Перейти до виконання </a>
+        <a class="button" href="./instructions.html">
+          Довідка з виконання <br />
+          віртуальної роботи
+        </a>
+
       </div>
     </div>
+  </main>
 
-    <footer>
-      <div class="footer-container">
-        <img src="./img/pstu_logo.png" alt="Герб ПДТУ" />
-        <span>
-          ДВНЗ "Приазовський державний технічний університет" <br />
-          Факультет інформаційних технологій <br />
-          Кафедра фізики © 2022
-        </span>
-      </div>
-      <div class="flag-container">
-        <a href="./ru/">Перейти до російськомовної версії </a>
-      </div>
-    </footer>
+  <div class="modal">
+    <div class="modal-dim">
+      <img src="./img/close-button.png" alt="" width="36" height="36" class="close-btn" />
+    </div>
+    <div class="modal-inner">
+      <h2>Про автора</h2>
+      <p>
+        Віртуальну лабораторну роботу розробив студент групи КН-20(2)
+        Шевченко Артем, науковий керівник проєкту – Цветкова Олена Валентинівна.
+      </p>
+    </div>
+  </div>
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/index.js"></script>
-  </body>
+  <footer>
+    <div class="footer-container">
+      <img src="./img/pstu_logo.png" alt="Герб ПДТУ" />
+      <span>
+        ДВНЗ "Приазовський державний технічний університет" <br />
+        Факультет інформаційних технологій <br />
+        Кафедра фізики © <span id="year-label"></span>
+      </span>
+    </div>
+
+    <script>
+      const yearLabel = document.getElementById("year-label");
+      const year = new Date().getFullYear();
+      console.log(year);
+      yearLabel.textContent = year; // якщо хочеш вивести на сторінку
+
+    </script>
+    <div class="flag-container">
+      <a href="./ru/">Перейти до російськомовної версії </a>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
