@@ -133,22 +133,24 @@ body {
     margin-top:200px;
 }
 
-
-.button-begin {
-    width:270px;
-    background: #fefcea; 
-    background: linear-gradient(to top, #212121, #343839);
-    border: 2px solid #ccc;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    border-radius: 15px;
-    margin: 12px auto;
-    padding: 22px;
-    transition: 1s;
+.button-begin,
+.btn {
+  width: 270px;
+  background: #fefcea;
+  background: linear-gradient(to top, #212121, #343839);
+  border: 2px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  margin: 12px auto;
+  padding: 22px;
+  transition: 1s;
 }
+
+.btn a,
 .button-begin a {
-    transition: 1s;
-    color: #ccc;
-    text-decoration: none;
+  transition: 1s;
+  color: #ccc;
+  text-decoration: none;
 }
 .button-begin a:hover {
     color: #fff;
@@ -207,8 +209,8 @@ body {
 .site-report {
     background: #fefcea; 
     background: linear-gradient(to top, #ECECEC, #FFF);
-
-    height:700px;
+padding-bottom: 100px;
+    /* height:700px; */
 }
 
 
