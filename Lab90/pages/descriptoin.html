@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №90</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/theoretic.css">
+
+</head>
+
+<body>
+  <header>
+    <nav><a href="../index.html" class="home-link menu-button">На головну</a></nav>
+  </header>
+  <div class="article-wrapper">
+    <div class="download-container">
+      <a href="../documents/lab90.doc" class="download-btn" download="">
+        <svg class="download-icon" width="64" height="64" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.5 3H12H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H7.5M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V9.75V12V19C19 20.1046 18.1046 21 17 21H16.5"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12 12V20M12 20L9.5 17.5M12 20L14.5 17.5" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+    <h1 style="text-align: center; text-transform: uppercase;">ОПИС УСТАНОВКИ І МЕТОДИКИ ВИМІРЮВАНЬ</h1>
+
+    <p class="block">Експериментальна установка для вимірювання інтенсивності гамма-випромінювання складається з
+      наступних елементів:</p>
+    <ul>
+      <li>джерело гамма-випромінювання</li>
+      <li>лічильник Гейгера-Мюллера з підсилювальним блоком</li>
+      <li>перерахунковий прилад</li>
+      <li>набір пластин з поглинаючих матеріалів (залізо і свинець)</li>
+      <li>мікрометр або штангенциркуль</li>
+    </ul>
+
+    <div class="theoretic-image-container" id="theoretic-img">
+      <img src="../img/description/img1.png" alt="Рис. 1">
+      <p class="img-description">Рисунок – Схема установки</p>
+    </div>
+    <p class="block">Джерело випромінювання – радіоактивний препарат 1, який поміщений в контейнер 2 (рис.),
+      встановлюють над блоком детекторів 3 (набір лічильників Гейгера-Мюллера). Між джерелом 1 і блоком детекторів 3
+      поміщають поглинаючі пластини 4. На блок детекторів 3 від блоку живлення 5 подається висока напруга.</p>
+    <p class="block">Сигнали, що виникають під дією випромінювання, з блоку 3 надходять на вхід лічильника 6
+      (перерахунковий прилад УМФ-2000).</p>
+    <p class="block">Товщину поглинаючих пластин вимірюють за допомогою мікрометра або штангенциркуля – задано
+      відповідною кнопкою вибору товщини. Тривалість проведення вимірювання визначають за допомогою секундоміра, який є
+      складовою частиною установки УМФ-2000.</p>
+    <p class="block">У даній роботі використовується джерело випромінювання, ядра якого можуть зазнавати - розпад, в
+      результаті якого утворюються - і - промені. Для - і - випромінювання зменшення інтенсивності випромінювання при
+      проходженні через шар речовини товщиною описується рівнянням:</p>
+    <div class="formula-row">
+      <div></div>
+      <div class="formula-container">
+        <blockquote class="blockquote-c">
+          <span class="chemical">J = J<sub>0</sub>e<sup>-kd</sup></span>
+        </blockquote>
+      </div>
+      <div class="marker-container">
+        <p>(1)</p>
+      </div>
+    </div>
+    <p class="block">Якщо інтенсивність ядерного випромінювання не дуже велика, вона пропорційна числу частинок,
+      зареєстрованих лічильником. Таким чином, замість формули (1) ми можемо записати:
+    </p>
+    <div class="formula-row">
+      <div></div>
+      <div class="formula-container">
+        <blockquote class="blockquote-c">
+          <span class="chemical">n = n<sub>0</sub>e<sup>-kd</sup></span>
+        </blockquote>
+      </div>
+      <div class="marker-container">
+        <p>(2)</p>
+      </div>
+    </div>
+
+    <p class="blockquote-description">де: n<sub>0</sub> і n - число частинок за одиницю часу, зареєстрованих лічильником
+      на вході (без поглинача) і виході з поглинача (рис. 1 а).</p>
+    <br>
+    <div class="theoretic-image-container" id="theoretic-img">
+      <img src="../img/description/img2.png" alt="Рис. 1 a">
+      <p class="img-description">Рисунок 1 Залежності <br> а) числа частинок, які реєструють <br> б) логарифма числа
+        частинок від товщини поглинаючого шару</p>
+    </div>
+    <p class="block">Зазвичай залежність (2) представляють у вигляді лінійної. Логарифмуючи даний вираз, отримаємо:</p>
+    <div class="formula-row">
+      <div></div>
+      <div class="formula-container">
+        <blockquote class="blockquote-c">
+          <span class="chemical">ln n= ln n<sub>0</sub>-kd</span>
+        </blockquote>
+      </div>
+      <div class="marker-container">
+        <p>(3)</p>
+      </div>
+    </div>
+    <p class="block">Графік залежності (3) представлений на рис. 1 б); з нього видно, що <span class="chemical">k = tg
+        φ</span>. Це дозволяє по графіку знайти
+      коефіцієнт поглинання.</p>
+    <p class="block">Вимірявши на досліді залежність <span class="chemical">n(x)</span> для різних матеріалів і
+      побудувавши графіки <span class="chemical">ln n = f(x)</span> (рис. 1б), можна по
+      прямолінійній частині графіків визначити коефіцієнти поглинання гамма-випромінювання відповідних матеріалів за
+      формулою:</p>
+    <div class="formula-row">
+      <div></div>
+      <div class="formula-container">
+        <blockquote class="blockquote-c">
+          <span class="chemical">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 150%;">
+              <mi>k</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>ln</mi>
+                  <mo>&#xA0;</mo>
+                  <msub>
+                    <mi>n</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo>-</mo>
+                  <mo>&#xA0;</mo>
+                  <mi>l</mi>
+                  <mi>n</mi>
+                  <mo>&#xA0;</mo>
+                  <msub>
+                    <mi>n</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>&#xA0;</mo>
+                </mrow>
+                <mrow>
+                  <msub>
+                    <mi>d</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>-</mo>
+                  <mo>&#xA0;</mo>
+                  <msub>
+                    <mi>d</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </math></span>
+        </blockquote>
+      </div>
+      <div class="marker-container">
+        <p>(4)</p>
+      </div>
+    </div>
+
+    <p class="blockquote-description">де: d<sub>1</sub> і d<sub>2</sub>n - товщини поглинаючих шарів.</p>
+    <p class="block">Іноді спостерігають нелінійність залежності <span class="chemical">ln n = f(x)</span> - це
+      обумовлено енергетичною неоднорідністю пучка фотонів.</p>
+    <p class="block">Перед визначенням інтенсивності випромінювання необхідно встановити природний фон, який обумовлений
+      космічним випромінюванням і наявністю радіоактивних домішок у навколишньому середовищі, в тому числі в матеріалах
+      самого лічильника.</p>
+    <p class="block">Після визначення величини фону між лічильником і джерелом радіоактивного випромінювання поміщають
+      пластини досліджуваної речовини, збільшуючи товщину досліджуваного шару. Віднімаючи фон з показань вимірювального
+      приладу визначають інтенсивність випромінювання джерела. За отриманими даними будують криву поглинання
+      радіоактивного випромінювання в залежності від товщини шару.</p>
+
+    <h2 style="text-align: center;">ПОРЯДОК ВИКОНАННЯ РОБОТИ</h2>
+
+
+    <p class="block">Робота виконується в віртуальній лабораторії, але всі дії повторюють реальне її виконання. На
+      початку роботи перечитайте «Довідку з виконання лабораторної роботи».</p>
+
+    <ol>
+      <li>Включити перерахунковий прилад з лічильником кнопкою «Живлення».</li>
+      <li>Заміряти радіоактивний природній фон протягом 3 хв (180 с), результати занести в таблицю 1</li>
+      <li>Розрахувати фон за 1 хв і занести в таблицю 1.</li>
+      <li>Поставити між джерелом випромінювання і лічильником пластину з заліза товщиною 1 мм. Визначити число
+        імпульсів, що реєструються лічильником за 3 хв. Розрахувати число імпульсів за одну хвилину і дані занести в
+        таблицю 1.</li>
+      <li>Замініть наявну пластину на пластину більшої товщини (заміна відбувається при натисканні відповідної кнопки
+        управління товщиною). Зробіть виміри кількості імпульсів за 3 хвилини</li>
+      <li>Повторіть п.6 з усім набором залізних пластин. Кожен раз в таблицю заноситься сумарна товщина пластин.
+        Аналогічні вимірювання провести зі свинцевими пластинами і дані занести в таблицю 1.</li>
+      <li>Розрахувати значення <span class="chemical">ln n</span> для кожного виміру, де <span
+          class="chemical">n</span>- число імпульсів за хвилину без фону</li>
+    </ol>
+    <style>
+      table.formatted-table {
+        border-collapse: collapse;
+        margin: 30px auto;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        background-color: #fff;
+        color: #000;
+        border: 3px solid black;
+      }
+
+      .formatted-table th,
+      .formatted-table td {
+        border: 1px solid #000;
+        padding: 8px 12px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .formatted-table caption {
+        caption-side: top;
+        text-align: right;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 8px;
+      }
+
+      .vertical-text {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        font-weight: bold;
+        font-size: 16px;
+        min-width: 30px;
+      }
+
+      .formatted-table thead th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+      }
+
+      .formatted-table td {
+        height: 0.5rem;
+      }
+
+      .formatted-table em {
+        font-style: italic;
+      }
+    </style>
+
+    <table class="formatted-table">
+      <caption style="color: #fff;">Таблиця 1</caption>
+      <thead>
+        <tr>
+          <th rowspan="3"> </th>
+          <th colspan="5">
+            Кількість імпульсів фону за 3 хв. =<br>
+            Кількість імпульсів фону за 1 хв. =
+          </th>
+        </tr>
+        <tr>
+          <th rowspan="2">Товщина стопки пластин<br><em>d</em>, мм</th>
+          <th rowspan="2">Кількість імпульсів<br>за 3 хв. з фоном</th>
+          <th rowspan="2">Кількість імпульсів<br>за 1 хв. з фоном</th>
+          <th rowspan="2">Кількість імпульсів<br>за 1 хв. без фону,<br><em>n</em></th>
+          <th rowspan="2"><em>ln&nbsp;n</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Залізо -->
+        <tr>
+          <td rowspan="5" class="vertical-text">залізо</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- Свинець -->
+        <tr>
+          <td rowspan="5" class="vertical-text">свинець</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <ol start="8">
+      <li>За даними таблиці на одному графіку побудувати залежності <span class="chemical">ln n = f(x)</span> для заліза
+        і свинцю. За формулою (4) по
+        прямолінійним ділянкам цих залежностей розрахувати відповідні коефіцієнти поглинання <span
+          class="chemical">k</span> і порівняти їх між собою.
+        Для підвищення точності вимірювань при розрахунку <span class="chemical">k</span> за формулою (4) точки з
+        координатами d<sub>1</sub> і d<sub>2</sub> не повинні занадто близько знаходитися одна до одної.</li>
+      <li>Зробіть висновки по роботі.</li>
+    </ol>
+
+    <h2 style="text-align: center;">КОНТРОЛЬНІ ПИТАННЯ</h2>
+    <ol>
+      <li>Які процеси відносять до радіоактивних?</li>
+      <li>Дайте характеристику різних видів радіоактивного випромінювання.</li>
+      <li>Які основні механізми взаємодії гамма-випромінювання з речовиною?</li>
+      <li>Чим пояснюється наявність радіоактивного фону?</li>
+      <li>Який вигляд має закон ослаблення γ-випромінювання при проходженні через речовину?</li>
+      <li>Який детектор використовується в роботі? Принцип його дії.</li>
+      <li>Сформулюйте мету даної роботи.</li>
+      <li>Поясніть порядок виконання роботи.</li>
+
+    </ol>
+  </div>
+</body>
+
+</html>

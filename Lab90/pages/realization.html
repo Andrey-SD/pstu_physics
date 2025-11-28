@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №90</title>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="preload" as="image" href="../img/stand1.webp" imagesrcset="../img/stand1.webp">
+  <link rel="preload" as="image" href="../img/table.png" imagesrcset="../img/table.webp">
+
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/realization.css">
+</head>
+
+<body>
+  <header>
+    <nav><a href="../index.html" class="home-link menu-button">На головну</a></nav>
+  </header>
+  <picture>
+    <source srcset="../img/table.webp" type="image/webp">
+    <img id="table" src="../img/table.png" alt="">
+  </picture>
+  <div id="umf-stand" style="width: 100%;">
+    <picture>
+      <source srcset="../img/stand1.webp" type="image/webp">
+      <img id="umf-image" src="../img/stand1.png" alt="УМФ-2000">
+    </picture>
+    <div id="plate-wrapper">
+      <!-- Підвантажуєть зі скрипту -->
+      <img id="plate" src="" alt="">
+    </div>
+    <div class="umf-button" data-action="stop" style="top: 49%; left: 27%; width: 2.5%; height: 5%;"></div>
+    <div class="umf-button" data-action="start" style="top: 49%; left: 42.5%; width: 2.5%; height: 5%;"></div>
+    <div class="led-container">
+      <div id="led-power" class="led"></div>
+      <div id="led-alpha" class="led"></div>
+      <div id="led-beta" class="led"></div>
+      <div id="led-count" class="led"></div>
+      <div id="btn-power" class="led"></div>
+    </div>
+    <div id="betaDisplay" class="display">
+      <div class="digit">
+        <p class="digit-bg">0</p>
+        <p class="digit-text"></p>
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p>
+        <p class="digit-text"></p>
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p>
+        <p class="digit-text"></p>
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p>
+        <p class="digit-text"></p>
+      </div>
+    </div>
+    <div id="display2" class="display">
+      <div class="digit">
+        <p class="digit-bg">0</p> <!-- <p class="digit-text">0</p> -->
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p> <!-- <p class="digit-text">0</p> -->
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p> <!-- <p class="digit-text">0</p> -->
+      </div>
+      <div class="digit">
+        <p class="digit-bg">0</p> <!-- <p class="digit-text">0</p> -->
+      </div>
+    </div>
+    <div id="stopwatchDisplay">
+      <p></p>
+    </div> <audio id="tick-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+      preload="auto"></audio>
+    <div id="controls">
+      <div id="sliderWrapper">
+        <div id="sliderContainer">
+          <div id="sliderThumb"></div>
+        </div>
+        <div id="valueDisplay">Товщина: 3 мм</div>
+      </div>
+      <div class="texture-buttons"> <button class="texture-btn" data-texture="none">Природній фон</button> <button
+          class="texture-btn" data-texture="iron">Залізо</button> <button class="texture-btn"
+          data-texture="lead">Свинець</button> </div>
+    </div>
+    <script> const plate = document.getElementById('plate'); function updatePlateImage(material, thickness) { const newSrc = (material == "none") ? "" : `../img/materials/${material}_${thickness}.png`; plate.style.transform = 'translate(10%, 150%)'; setTimeout(() => { plate.src = newSrc; requestAnimationFrame(() => { plate.style.transition = 'transform 0.5s ease'; plate.style.transform = 'translate(0, 0)'; }); }, 200); } </script>
+    <script src="../js/textureControl.js"></script>
+    <script src="../js/realization.js"></script>
+</body>
+
+</html>

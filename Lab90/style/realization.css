@@ -1,0 +1,328 @@
+:root {
+  --digit-font-size: 35px;
+  /*УВАГА!!!! ЗМІНЮЄТЬСЯ ЧЕРЕЗ СКРИПТ*/
+}
+
+#umf-stand {
+  position: relative;
+  width: 90%;
+  max-width: 1366px;
+}
+
+#umf-image {
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#table {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#plate {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  transition: transform 0.5s ease;
+
+}
+
+.led-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.led {
+  width: 5%;
+  aspect-ratio: 1/1;
+  background-color: rgb(71, 6, 6);
+  position: absolute;
+  z-index: -1;
+  /* z-index: 10; */
+}
+
+.led.active {
+  background-color: red;
+}
+
+#led-power {
+  top: 61%;
+  left: 28%;
+}
+
+#led-alpha {
+  top: 40%;
+  left: 31%;
+}
+
+#led-beta {
+  top: 40%;
+  left: 37%;
+}
+
+#led-count {
+  top: 31%;
+  left: 49%;
+}
+
+#btn-power {
+  position: absolute;
+  top: 62%;
+  left: 26%;
+  width: 8%;
+  height: 4%;
+  background-color: transparent;
+  z-index: 10;
+}
+
+#btn-power:hover{
+  cursor: pointer;
+}
+
+.display {
+  perspective: 207px;
+}
+
+#betaDisplay {
+  top: 21.6%;
+  left: 54%;
+  width: 8.9%;
+  transform: rotateX(5deg) rotateY(1deg) skewX(2deg);
+  transform-style: preserve-3d;
+}
+
+#display2 {
+  top: 40.6%;
+  left: 54.3%;
+  width: 9%;
+  transform: rotateX(5deg) rotateY(1deg) skewX(2deg);
+  transform-style: preserve-3d;
+}
+
+.display,
+#stopwatchDisplay {
+  position: absolute;
+  aspect-ratio: 3/1.1;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.4), inset 0 -8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.digit {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digit-text,
+.digit-bg {
+  position: absolute;
+  font-family: "Digit-7";
+  margin: 0;
+  text-align: right;
+  width: 100%;
+  line-height: 1.1;
+  font-size: var(--digit-font-size);
+}
+
+.digit-text {
+  color: rgb(99, 248, 0);
+}
+
+.digit-bg {
+  color: rgba(116, 115, 115, 0.5);
+}
+
+
+.umf-button {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+
+  /* Візуалізація для відлагодження */
+  /* border: 2px dashed rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.1); */
+}
+
+@font-face {
+  font-family: "Digit-7";
+  src: url(../font/Digital/digitalicg.ttf);
+}
+
+#controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 10px;
+  background: #1d6ba0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sliderWrapper {
+  margin-bottom: 20px;
+}
+
+#sliderContainer {
+  width: 50px;
+  height: 200px;
+  background: #ccc;
+  border-radius: 5px;
+  position: relative;
+  margin: 20px auto;
+}
+
+#sliderThumb {
+  width: 100%;
+  height: 30px;
+  background: #444;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#sliderThumb:hover {
+  background: #667;
+}
+
+#valueDisplay {
+  text-align: center;
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.texture-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.texture-btn {
+  padding: 10px 16px;
+  border: none;
+  outline-style: none;
+  background-color: #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.texture-btn:hover {
+  background-color: #bbbbbb;
+}
+
+.texture-btn.selected {
+  background-color: #444;
+  color: #ccc;
+}
+
+#controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background: #1d6ba0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  max-width: 200px;
+}
+
+/* Адаптація для вузьких екранів (мобільних) */
+@media (max-width: 600px) {
+  #controls {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 5px;
+  }
+
+  #sliderWrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sliderContainer {
+    height: 150px;
+    width: 40px;
+  }
+
+  #valueDisplay {
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+
+  .texture-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .texture-btn {
+    font-size: 0.9em;
+    padding: 8px 10px;
+  }
+}
+
+#stopwatchDisplay {
+  top: 28.3%;
+  left: 32.5%;
+  width: 8%;
+  background-color: rgba(66, 66, 66, 0.8);
+  font-family: monospace;
+  transform: skew(357deg, 0deg);
+  letter-spacing: 0.3em;
+  color: #fff;
+}
+
+#stopwatchDisplay p {
+  font-size: calc(var(--digit-font-size) *0.7);
+  align-items: center;
+}

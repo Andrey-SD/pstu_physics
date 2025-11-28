@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №90</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/main.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Віртуальна лабораторія</h1>
+    <h2>вимірювання коефіцієнта поглинання гамма-випромінювання</h2>
+    <a class="menu-button" href="pages/theoretic.html">Основні теоретичні положення</a>
+    <a class="menu-button" href="pages/descriptoin.html">Методика вимірювань, обробка результатів</a>
+    <a class="menu-button" href="pages/info.html">Довідка з виконання віртуальної роботи</a>
+    <a class="menu-button" href="pages/realization.html">Перейти до виконання</a>
+    <footer>
+
+      <p>ДВНЗ "Приазовський державний технічний університет"<br>
+        Факультет інформаційних технологій<br>
+        Кафедра фізики ©<span id="year-label"></span></p>
+      <p>
+      <div class="author-container">
+        <br>
+        Науковий керівник – Цветкова Олена Валентинівна.
+        <br>
+        Виконав студент групи МА-24 Деркач Андрій
+      </div>
+      </p>
+      <div class="logo">
+        <picture>
+          <source srcset="img/pstu.webp" type="image/webp">
+          <img src="img/pstu.png" alt="Логотип ПДТУ" width="100" loading="lazy" decoding="async">
+        </picture>
+      </div>
+
+
+    </footer>
+
+    <script>
+      const yearLabel = document.getElementById("year-label");
+      const year = new Date().getFullYear();
+      yearLabel.textContent = year;
+
+    </script>
+  </div>
+
+</body>
+
+</html>
