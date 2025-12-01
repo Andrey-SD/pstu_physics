@@ -7,7 +7,7 @@ const ledCount = document.getElementById("led-count");
 const btnPower = document.getElementById("btn-power");
 
 let onOffState = false;
-// об'єкт семисегментного дисплея (beta випромінювань)
+
 
 const sevenSegmentDisplay = (displayElement) => {
   let updateTimeoutId = null;
@@ -30,6 +30,7 @@ const sevenSegmentDisplay = (displayElement) => {
 
   const updateDisplayRandomly = () => {
     if (!running) return;
+
     print(displayElement, String(valShown));
     updateTimeoutId = setTimeout(updateDisplayRandomly, getRandomDelay());
   };
@@ -137,10 +138,10 @@ const stopWatch = (displayElement, soundElement) => {
   const tick = () => {
     seconds++;
     update();
-    if (soundElement) {
-      soundElement.currentTime = 0;
-      soundElement.play();
-    }
+    // if (soundElement) {
+    //   soundElement.currentTime = 0;
+    //   soundElement.play();
+    // }
   };
 
   const start = () => {
@@ -216,9 +217,6 @@ document.querySelectorAll('.umf-button').forEach(button => {
 
 //*****/
 
-
-
-
 btnPower.addEventListener("click", () => {
   onOffState = !onOffState;
   if (onOffState) {
@@ -233,5 +231,3 @@ btnPower.addEventListener("click", () => {
   betaDisplay.print(betaDisplayElement, "");
   stopWatchDisplay.stop();
 });
-
-// betaDisplay.print(betaDisplayElement, "");
