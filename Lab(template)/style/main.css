@@ -130,7 +130,7 @@ body {
   display: block;
 }
 
-.section__image-caption {
+.section__media-caption {
   padding: .8rem 0;
   font-size: 1.1rem;
 }
@@ -138,6 +138,22 @@ body {
 .section__actions {
   text-align: center;
   padding: 1.2rem 0;
+}
+
+.section__actions {
+  text-align: center;
+  padding: 1.2rem 0;
+}
+
+.section__video-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section__video {
+  height: 70vh;
 }
 
 /* ───────────────────────────────────────────
