@@ -1,36 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторні роботи</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        li {
-            padding: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторні роботи</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      padding: 40px 20px;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      max-width: 500px;
+      margin: 20px auto;
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #999, #ccc, #999);
+      border-radius: 50px;
+    }
+
+    ul {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      background: white;
+      margin: 8px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      transition: transform .2s ease, box-shadow .2s ease;
+      overflow: hidden;
+    }
+
+    li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      font-weight: 500;
+      display: block;
+    }
+
+    a:hover {
+      color: #000;
+    }
+
+    a strong {
+      font-size: 18px;
+      display: block;
+      color: #333;
+    }
+
+    .lab-desc {
+      display: block;
+      font-size: 16px;
+      color: #555;
+      margin-top: 4px;
+      line-height: 1.3;
+
+      white-space: nowrap;
+      /* не переносити рядки */
+      overflow: hidden;
+      /* обрізати зайве */
+      text-overflow: ellipsis;
+      /* показати "..." в кінці */
+    }
+  </style>
+
 </head>
+
 <body>
-    <h2>Оберіть роботу</h3>
-    <hr>
-    <ul>
-        <li><a href="./ЛР6/6.html">ЛР №6</a></li>
-        <li><a href="./ЛР7/7ua.html">ЛР №7</a></li>
-        <li><a href="./ЛР13/13ua.html">ЛР №13</a></li>
-        <li><a href="./ЛР33/33.html">ЛР №33</a></li>
-        <li><a href="./ЛР46-1/index.html">ЛР №46-1</a></li>
-        <li><a href="./ЛР46-2/46.html">ЛР №46-2</a></li>
-        <li><a href="./ЛР49/49.html">ЛР №49</a></li>
-        <li><a href="./ЛР65/home.html">ЛР №65</a></li>
-        <li><a href="./ЛР72/index.html">ЛР №72</a></li>
-        <li><a href="ЛР76/index.html">ЛР №76</a></li>
-        <li><a href="./ЛР80в/index.html">ЛР №80</a></li>
-        <li><a href="./ЛР81/81ua.html">ЛР №81</a></li>
-        <li><a href="./Lab90/index.html">ЛР №90</a></li>
-    </ul>
+  <h2>Лабораторні роботи з фізики</h2>
+  <hr>
+  <ul>
+    <li>
+      <a href="./Lab3/index.html">
+        <strong>ЛР №3</strong>
+        <span class="lab-desc">
+          ВИВЧЕННЯ ЗАКОНІВ РІВНОПРИСКОРЕНОГО РУХУ.
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="./Lab4/lab4.html">
+        <strong>ЛР №4</strong>
+        <span class="lab-desc">
+          ВИЗНАЧЕННЯ ШВИДКОСТІ КУЛІ ЗА ДОПОМОГОЮ БАЛІСТИЧНОГО КРУТИЛЬНОГО МАЯТНИКА
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="./ЛР6/6.html">
+        <strong>ЛР №6</strong>
+        <span class="lab-desc">
+          Визначення моменту інерції тіла.
+        </span>
+      </a>
+    </li>
+
+    <li><a href="./ЛР7/7ua.html">
+        <strong>ЛР №7</strong>
+        <span class="lab-desc">
+          Визначення коефіцієнта відновлення і енергії залишкової деформації при ударі куль
+        </span>
+      </a></li>
+
+    <li>
+      <a href="./ЛР13/13ua.html">
+        <strong>ЛР №13</strong>
+        <span class="lab-desc">
+          Визначення відношення теплоємностей для повітря
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР33/33.html">
+        <strong>ЛР №33</strong>
+        <span class="lab-desc">
+          Визначення питомого заряду електрона методом магнітного фокусування
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР46-1/index.html">
+        <strong>ЛР №46-1</strong>
+        <span class="lab-desc">
+          Дослідження повної, корисної потужностей та ККД акумулятора залежно від його навантаження
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР46-2/46.html">
+        <strong>ЛР №46-2</strong>
+        <span class="lab-desc">
+          Дослідження повної, корисної потужностей та ККД акумулятора залежно від його навантаження
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР49/49.html">
+        <strong>ЛР №49</strong>
+        <span class="lab-desc">
+          Вивчення магнітного поля кругового струму
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР65/home.html">
+        <strong>ЛР №65</strong>
+        <span class="lab-desc">
+          Вивчення власних коливань струни
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР72/index.html">
+        <strong>ЛР №72</strong>
+        <span class="lab-desc">
+          Визначення довжини хвилі лазерного випромінювання за допомогою дифракційної решітки
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР76/index.html">
+        <strong>ЛР №76</strong>
+        <span class="lab-desc">
+          Визначення довжини світлової хвилі за допомогою біпризми Френеля
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР80в/index.html">
+        <strong>ЛР №80</strong>
+        <span class="lab-desc">
+          Вивчення спектру атома водню та визначення постійної Рідберга
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./ЛР81/81ua.html">
+        <strong>ЛР №81</strong>
+        <span class="lab-desc">
+          Вивчення законів теплового випромінювання
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./Lab90/index.html">
+        <strong>ЛР №90</strong>
+        <span class="lab-desc">
+          вимірювання коефіцієнта поглинання гамма-випромінювання
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- ——— Зміна літер у описі як у реченнях. ——— -->
+  <script>
+    function sentenceCase(text) {
+      text = text.trim();
+      if (!/[.!?]$/.test(text)) {
+        text += ".";
+      }
+
+      let result = "";
+      let capitalizeNext = true;
+
+      for (const letter of text) {
+        if (/^\p{L}$/u.test(letter)) {
+          if (capitalizeNext) {
+            result += letter.toUpperCase();
+            capitalizeNext = false;
+          } else {
+            result += letter.toLowerCase();
+          }
+        } else {
+          result += letter; 
+          if (letter === "." || letter === "!" || letter === "?") {
+            capitalizeNext = true;
+          }
+        }
+      }
+
+      return result;
+    }
+
+    document.querySelectorAll('.lab-desc').forEach(span => {
+      if (span.textContent.trim() !== "") {
+        span.textContent = sentenceCase(span.textContent.trim());
+      }
+    });
+  </script>
 </body>
+
 </html>
