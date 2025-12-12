@@ -64,6 +64,7 @@ body {
   background: linear-gradient(to top, var(--gray-800), var(--gray-700));
   padding: 20px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  z-index: 100;
 }
 
 .header__menu {
