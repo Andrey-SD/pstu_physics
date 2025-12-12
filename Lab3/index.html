@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/main.css">
+  <title>Лабораторна робота №3</title>
+
+  <script defer>
+    // -------------------------------
+    // Зроблено для зручності аби не шукати в коді коли треба замінити файл
+    // Масив об'єктів FILES
+    // Кожен об'єкт містить:
+    //   id   - ID кнопки в HTML
+    //   path - шлях до файлу, який треба підключити
+    // Щоб додати нову кнопку, просто додайте новий об'єкт сюди
+    // і HTML на сторінку
+    // <a href="" class="btn" download id="вказати бажаний">Текст посилання</a>
+    // -------------------------------
+    const FILES = [
+      { id: "theory-btn", path: "documents/ЛР3.doc" },
+      { id: "report-btn", path: "documents/ЛР3-звіт.docx" }
+    ];
+
+    // -------------------------------
+    // Коли DOM буде готовий, присвоюємо href усім кнопкам
+    // -------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      FILES.forEach(item => {
+        const btn = document.getElementById(item.id);
+        if (btn) btn.href = item.path;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header__nav field">
+      <ul class="header__menu">
+        <li class="header__menu-item"><a href="#theory" class="header__menu-link">Теорія</a></li>
+        <li class="header__menu-item"><a href="#implementation" class="header__menu-link">Лабораторна робота</a></li>
+        <li class="header__menu-item"><a href="#report" class="header__menu-link">Звіт</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section section--intro">
+    <div class="section__title-box field">
+      <h1 class="section__title">Лабораторна робота №3</h1>
+      <h2 class="section__subtitle">
+        ВИВЧЕННЯ ЗАКОНІВ РІВНОПРИСКОРЕНОГО РУХУ
+      </h2>
+    </div>
+
+    <div class="section__media field">
+      <img id="advud-machine" src="img/advud-machine.png" alt="рисунок" class="section__image">
+      <p class="section__media-caption">Машина Атвуда</p>
+    </div>
+
+
+  </section>
+
+  <section id="theory" class="section section--light">
+    <div class="section__title-box field">
+      <h2 class="section__title">Перед початком ознайомтесь з</h2>
+    </div>
+
+    <div class="section__actions field">
+      <!-- Посилання заповнюэться скриптом, що розташований у <head> -->
+      <a href="" class="btn" download id="theory-btn">Основні теоретичні положення</a>
+    </div>
+
+    <div class="section__media field">
+      <img src="img/book.png" alt="рисунок" class="section__image">
+    </div>
+
+    <div class="section__actions field">
+      <a href="#implementation" class="btn">Почати роботу</a>
+    </div>
+  </section>
+
+  <section id="implementation" class="section section--light">
+    <div class="section__title-box field">
+      <h2 class="section__title">Вправа 1</h2>
+    </div>
+
+    <div class="section__video-cards field">
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 1</p>
+        <video class="section__video" src="video/40.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 2</p>
+        <video class="section__video" src="video/50.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 3</p>
+        <video class="section__video" src="video/60.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 4</p>
+        <video class="section__video" src="video/70.mp4" controls></video>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="section__title-box field">
+      <h2 class="section__title">Вправа 2</h2>
+    </div>
+
+    <div class="section__video-cards field">
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 1</p>
+        <video class="section__video" src="video/25-40.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 2</p>
+        <video class="section__video" src="video/35-40.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 3</p>
+        <video class="section__video" src="video/45-40.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 4</p>
+        <video class="section__video" src="video/55-40.mp4" controls></video>
+      </div>
+    </div>
+
+    <div class="section__media field">
+      <p class="section__media-caption">Перегляньте відео і зафіксуйте значення з дослідів.</p>
+    </div>
+  </section>
+
+  <section id="report" class="section section--light">
+    <div class="section__actions field">
+
+      <!-- Посилання заповнюэться скриптом, що розташований у <head> -->
+      <a href="" class="btn" download id="report-btn">Звіт</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copyright field">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики © <span id="year-label">2025</span>
+    </p>
+
+    <script>
+      document.getElementById("year-label").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+</body>
+
+</html>
