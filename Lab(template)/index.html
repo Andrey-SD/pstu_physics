@@ -25,7 +25,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densitydpi=device-dpi">
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/main.css">
   <title>Лабораторна робота №___</title>
@@ -59,7 +60,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" sticky="false">
     <nav class="header__nav field">
       <ul class="header__menu">
         <li class="header__menu-item"><a href="#theory" class="header__menu-link">Теорія</a></li>
@@ -68,6 +69,84 @@
       </ul>
     </nav>
   </header>
+  <section class="section section--light section--stopwatch">
+    <div class="field">
+      <div class="stopwatch">
+        <p class="stopwatch__display">00:00:00.00</p>
+
+        <div class="stopwatch__actions">
+          <button class="btn stopwatch__button stopwatch__button--toggle">
+            Старт
+          </button>
+          <button class="btn stopwatch__button stopwatch__button--reset">
+            Скинути
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const display = document.querySelector(".stopwatch__display");
+      const toggleBtn = document.querySelector(".stopwatch__button--toggle");
+      const resetBtn = document.querySelector(".stopwatch__button--reset");
+
+      let startTime = 0;
+      let elapsed = 0;
+      let running = false;
+      let rafId;
+
+      function formatTime(ms) {
+        const totalSeconds = ms / 1000;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+        const micro = Math.floor((ms % 10) * 10);
+        console.log(micro);
+
+        return (
+          String(hours).padStart(2, "0") + ":" +
+          String(minutes).padStart(2, "0") + ":" +
+          String(seconds).padStart(2, "0") + "." +
+          String(micro).padStart(2, "0")
+        );
+      }
+
+      function update() {
+        const now = performance.now();
+        const time = elapsed + (now - startTime);
+        display.textContent = formatTime(time);
+        rafId = requestAnimationFrame(update);
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        if (!running) {
+          startTime = performance.now();
+          running = true;
+          toggleBtn.textContent = "Стоп";
+          toggleBtn.classList.add("running");
+          update();
+        } else {
+          elapsed += performance.now() - startTime;
+          running = false;
+          toggleBtn.textContent = "Старт";
+          toggleBtn.classList.remove("running");
+          cancelAnimationFrame(rafId);
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        elapsed = 0;
+        startTime = 0;
+        running = false;
+        cancelAnimationFrame(rafId);
+        display.textContent = "00:00:00.00";
+        toggleBtn.textContent = "Старт";
+        toggleBtn.classList.remove("running");
+      });
+
+    </script>
+  </section>
+
 
   <section class="section section--intro">
     <div class="section__title-box field">
