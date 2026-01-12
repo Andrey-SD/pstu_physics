@@ -1,0 +1,237 @@
+<!-- ============================================================
+  Проєктний шаблон
+
+  Увага!
+  Будь ласка, працюйте лише з копією цього шаблону.
+  Спочатку створіть копію файла, а вже потім вносьте будь-які зміни.
+  Оригінальний шаблон дозволяється редагувати лише у разі
+  дійсно необхідних оновлень або підтримки.
+
+  Опис:
+  Цей файл є базовим шаблоном для створення майбутніх проєктів.
+  Структура побудована на основі стилістики попередніх робіт,
+  але є повністю автономною й не містить зовнішніх залежностей.
+
+  Використання:
+  • Дозволяється копіювати, змінювати та доповнювати.
+  • Призначений для швидкого старту та уніфікації нових проєктів.
+
+  Для розробника:
+  Модифікуйте копію шаблону відповідно до потреб конкретного завдання.
+  ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densitydpi=device-dpi">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/main.css">
+  <title>Лабораторна робота №91</title>
+
+  <script defer>
+    // -------------------------------
+    // Зроблено для зручності аби не шукати в коді коли треба замінити файл
+    // Масив об'єктів FILES
+    // Кожен об'єкт містить:
+    //   id   - ID кнопки в HTML
+    //   path - шлях до файлу, який треба підключити
+    // Щоб додати нову кнопку, просто додайте новий об'єкт сюди
+    // і HTML на сторінку
+    // <a href="" class="btn" download id="вказати бажаний">Текст посилання</a>
+    // -------------------------------
+    const FILES = [
+      { id: "theory-btn", path: "documents/Lab91.doc" },
+      { id: "report-btn", path: "documents/Report91.docx" }
+    ];
+
+    // -------------------------------
+    // Коли DOM буде готовий, присвоюємо href усім кнопкам
+    // -------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      FILES.forEach(item => {
+        const btn = document.getElementById(item.id);
+        if (btn) btn.href = item.path;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="header" sticky="false">
+    <nav class="header__nav field">
+      <ul class="header__menu">
+        <li class="header__menu-item"><a href="#theory" class="header__menu-link">Теорія</a></li>
+        <li class="header__menu-item"><a href="#implementation" class="header__menu-link">Лабораторна робота</a></li>
+        <li class="header__menu-item"><a href="#report" class="header__menu-link">Звіт</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="section section--light section--stopwatch">
+    <div class="field">
+      <div class="stopwatch">
+        <p class="stopwatch__display">00:00:00.00</p>
+
+        <div class="stopwatch__actions">
+          <button class="btn stopwatch__button stopwatch__button--toggle">
+            Старт
+          </button>
+          <button class="btn stopwatch__button stopwatch__button--reset">
+            Скинути
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const display = document.querySelector(".stopwatch__display");
+      const toggleBtn = document.querySelector(".stopwatch__button--toggle");
+      const resetBtn = document.querySelector(".stopwatch__button--reset");
+
+      let startTime = 0;
+      let elapsed = 0;
+      let running = false;
+      let rafId;
+
+      function formatTime(ms) {
+        const totalSeconds = ms / 1000;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+        const micro = Math.floor((ms % 10) * 10);
+        console.log(micro);
+
+        return (
+          String(hours).padStart(2, "0") + ":" +
+          String(minutes).padStart(2, "0") + ":" +
+          String(seconds).padStart(2, "0") + "." +
+          String(micro).padStart(2, "0")
+        );
+      }
+
+      function update() {
+        const now = performance.now();
+        const time = elapsed + (now - startTime);
+        display.textContent = formatTime(time);
+        rafId = requestAnimationFrame(update);
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        if (!running) {
+          startTime = performance.now();
+          running = true;
+          toggleBtn.textContent = "Стоп";
+          toggleBtn.classList.add("running");
+          update();
+        } else {
+          elapsed += performance.now() - startTime;
+          running = false;
+          toggleBtn.textContent = "Старт";
+          toggleBtn.classList.remove("running");
+          cancelAnimationFrame(rafId);
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        elapsed = 0;
+        startTime = 0;
+        running = false;
+        cancelAnimationFrame(rafId);
+        display.textContent = "00:00:00.00";
+        toggleBtn.textContent = "Старт";
+        toggleBtn.classList.remove("running");
+      });
+
+    </script>
+  </section>
+
+
+  <section class="section section--intro">
+    <div class="fl-box field">
+      <div class="section__title-box field">
+        <div>
+          <h1 class="section__title">Лабораторна робота №91</h1>
+          <h2 class="section__subtitle">Визначення прискорення сили тяжіння за допомогою обертального маятника</h2>
+        </div>
+        <div class="section__actions field">
+          <a href="#implementation" class="btn">Почати роботу</a>
+        </div>
+      </div>
+      <div>
+        <div class="section__media field">
+          <img src="img/device.gif" alt="рисунок" class="section__image">
+          <!-- <p class="section__media-caption">Назва рисунка</p> -->
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="theory" class="section section--light">
+    <div class="section__title-box field">
+      <h2 class="section__title">Перед початком ознайомтесь з теорією</h2>
+    </div>
+
+    <div class="section__actions field">
+      <!-- Посилання заповнюэться скриптом, що розташований у <head> -->
+      <a href="" class="btn" download id="theory-btn">Основні теоретичні положення</a>
+    </div>
+
+    <div class="section__media field">
+      <img src="img/book.jpg" alt="рисунок" class="section__image">
+    </div>
+
+  </section>
+
+  <section id="implementation" class="section section--light">
+    <div class="section__title-box field">
+      <h2 class="section__title">Робота установки</h2>
+    </div>
+
+    <div class="section__video-cards field">
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 1</p>
+        <video class="section__video" src="video/1.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 2</p>
+        <video class="section__video" src="video/2.mp4" controls></video>
+      </div>
+      <div class="section__video-card">
+        <p class="section__media-caption">Дослід 3</p>
+        <video class="section__video" src="video/3.mp4" controls></video>
+      </div>
+
+    </div>
+
+    <div class="section__media field">
+      <p class="section__media-caption">Перегляньте відео і зафіксуйте значення з дослідів.</p>
+    </div>
+  </section>
+
+  <section id="report" class="section section--light">
+    <div class="section__actions field">
+
+      <!-- Посилання заповнюэться скриптом, що розташований у <head> -->
+      <a href="" class="btn" download id="report-btn">Звіт</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copyright field">
+      ДВНЗ "Приазовський державний технічний університет"<br>
+      Факультет інформаційних технологій<br>
+      Кафедра фізики © <span id="year-label">2025</span>
+    </p>
+
+    <script>
+      document.getElementById("year-label").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+/* ───────────────────────────────────────────
+   ГЛОБАЛЬНІ ЗМІННІ
+──────────────────────────────────────────── */
+:root {
+  --container-width: 1200px;
+  --gray-100: #fafafa;
+  --gray-300: #cccccc;
+  --gray-600: #808080;
+  --gray-700: #4B4B4B;
+  --gray-800: #343434;
+  --text-light: #cccccc;
+}
+
+/* ───────────────────────────────────────────
+   БАЗА
+──────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--gray-600);
+  background: #fff;
+}
+
+.field {
+  width: min(90%, var(--container-width));
+  margin: 0 auto;
+}
+
+.section__actions {
+  text-align: center;
+  padding: 1.25rem 0;
+}
+
+.fl-box {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 200px;
+  max-width: 250px;
+  word-wrap: break-word;
+  background: linear-gradient(to top, var(--gray-800), var(--gray-700));
+  text-shadow: 1px 1px 2px var(--gray-600);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 1.25rem 1.5625rem;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-style: italic;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.07);
+}
+
+/* ───────────────────────────────────────────
+   HEADER
+──────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to top, var(--gray-800), var(--gray-700));
+  padding: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  z-index: 100;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.header__menu-link {
+  color: var(--text-light);
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.header__menu-link:hover {
+  color: #fff;
+}
+
+/* ───────────────────────────────────────────
+   SECTIONS
+──────────────────────────────────────────── */
+.section {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #cccccc40;
+  scroll-margin-top: 80px;
+}
+
+.section--intro {
+  background: linear-gradient(to top, #ECECEC, #FFF);
+}
+
+.section--light {
+  background: var(--gray-100);
+}
+
+.section__title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.section__title {
+  font-size: 2.25rem;
+  text-shadow: 1px 1px 2px gray;
+  margin-bottom: .5rem;
+}
+
+.section__subtitle {
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 0 auto;
+  color: var(--gray-600);
+}
+
+.section__media {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.section__image {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+.section__media-caption {
+  padding: .8rem 0;
+  font-size: 1.1rem;
+}
+
+.section__actions {
+  text-align: center;
+  padding: 1.2rem 0;
+}
+
+.section__video-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section__video {
+  height: 70vh;
+}
+
+
+/*---------------------------------------------
+  СЕКУНДОМІР
+-----------------------------------------------*/
+.section--stopwatch {
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+  padding: 10px 0;
+}
+
+
+.stopwatch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stopwatch__display {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gray-800);
+  text-shadow: 1px 1px 2px var(--gray-300);
+  font-family: "Courier New", monospace;
+}
+
+.stopwatch__actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stopwatch__button {
+  font-size: 1.5rem;
+  padding: 2px 25px;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.stopwatch__button--toggle.running {
+  background: linear-gradient(to top, #6b1f1f, #8a2a2a);
+}
+
+@media (orientation: portrait) {
+  .header__menu {
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .header__menu-item {
+    text-align: right;
+  }
+
+  .stopwatch {
+    justify-content: center;
+  }
+
+  .stopwatch,
+  .stopwatch__display {
+    gap: 10px;
+  }
+
+  .section--stopwatch {
+    top: 0;
+  }
+
+  .stopwatch__actions {
+    gap: 10px;
+  }
+
+  .header[sticky="false"] {
+    position:static;
+  }
+}
+
+/* ───────────────────────────────────────────
+   FOOTER
+──────────────────────────────────────────── */
+.footer {
+  background: linear-gradient(to top, var(--gray-800), var(--gray-700));
+  padding: .625rem 0;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+
+/* ───────────────────────────────────────────
+   АДАПТИВ
+──────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .section__title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    min-width: 200px;
+  }
+
+  .section__image {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__menu {
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
