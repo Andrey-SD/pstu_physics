@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+hr {
+  max-width: 500px;
+  margin: 20px auto;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #999, #ccc, #999);
+  border-radius: 50px;
+}
+
+.lab-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-item {
+  background: white;
+  margin: 8px 0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+}
+
+.lab-item__actions {
+  width: 45px;
+  flex-shrink: 0;
+}
+
+.lab-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.lab-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.lab-item__link {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.lab-item__link:hover {
+  color: #000;
+}
+
+.lab-item__link strong {
+  font-size: 18px;
+  display: block;
+  color: #333;
+}
+
+.lab-item__desc {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-top: 4px;
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.lab-item__copy {
+  width: 100%;
+  cursor: pointer;
+}
+
+
+/* ───────────────────────────────────────────
+   POP_UP COPY TOAST
+──────────────────────────────────────────── */
+
+#copyToast {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  padding: 7px 14px;
+  width: 500px;
+
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #fff;
+  background-color: #2ecc71;
+
+  border: 1px solid #fff;
+  border-radius: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    bottom 0.4s ease,
+    opacity 0.3s ease,
+    background-color 0.2s ease;
+}
+
+#copyToast.is-visible {
+  bottom: 20px;
+  opacity: 1;
+}
+
+#copyToast.is-error {
+  background-color: rgb(194, 73, 43);
+}
