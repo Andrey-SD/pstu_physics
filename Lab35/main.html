@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+  <META charset="utf-8">
+  <TITLE>Виконання | ДВНЗ ПДТУ </title>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</HEAD>
+
+<BODY>
+  <main>
+
+    <div class="back">
+      <button class="button" onclick="location.href='./lab35.html'" type="button"> На головну ↩ </button>
+    </div>
+
+
+    <div class="slider-container">
+      <img src="./images/main--off.png" alt="" class="slider-img" />
+      <button class="slider-btn" type="button"></button>
+      <button class="anod-btn" type="button"></button>
+      <div class="p1-value" id="light-left">
+        <div class="p1-value-block">
+          <output id="p1_value">00.00</output>
+        </div>
+      </div>
+      <div class="p2-value" id="light-left">
+        <div class="p2-value-block">
+          <output id="p2_value">00.00</output>
+        </div>
+      </div>
+
+      <div class="B-value" id="light-left">
+        <div class="B-value-block">
+          <output id="Bvalue">0.0</output>
+        </div>
+      </div>
+
+
+
+      <div class="range-block">
+        <input class="bar" type="range" id="oms" min="0" max="0.6" value="0.0" step="0.02"
+          onchange="update_p1value(this.value)" oninput="update_p1value(this.value)" />
+      </div>
+
+
+    </div>
+  </main>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</BODY>
+
+</HTML>

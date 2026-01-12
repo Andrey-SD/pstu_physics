@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+  <META charset="utf-8">
+  <TITLE>Віртуальна лабораторія </title>
+
+
+  <link href="./css/index.css" rel="stylesheet">
+  <link href="./css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</HEAD>
+
+<BODY>
+  <main>
+    <div class="heading-container">
+      <div class="heading-container-2">
+        <h1 class="h1">Віртуальна лабораторія:</h1>
+        <h2 class="h2">
+          визначення питомого заряду
+          електрона методом магнетрона
+        </h2>
+      </div>
+      <div class="flex-column ">
+
+        <button class="button" onclick="location.href='./files/ЛР-теорія.docx'" type="button">
+          Основні теоретичні положення
+        </button>
+
+        <button class="button" onclick="location.href='./files/Практика.docx'" type="button">
+          Методика вимірювань, обробка результатів
+        </button>
+
+        <button class="button" onclick="location.href='./instructions.html'" type="button">
+          Довідка з виконання віртуальної роботи
+        </button>
+
+        <button class="button-go" onclick="location.href='./main.html'" type="button">
+          Перейти до виконання
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+  </div>
+
+
+
+  <footer>
+
+    <div class="footer-container">
+      <img src="./images/logo.png" alt="Герб ПДТУ" />
+      <span>
+        ДВНЗ "Приазовський державний технічний університет" <br />
+        Факультет інформаційних технологій <br />
+        Кафедра фізики © <span id="year-label">2026</span>
+      </span>
+    </div>
+    <div class="footer-info">
+      <i class="fa-solid fa-circle-info author_"></i>
+    </div>
+    <script>
+      document.getElementById("year-label").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</BODY>
+
+</HTML>

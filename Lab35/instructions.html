@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Довідка з виконання | ДВНЗ ПДТУ</title>
+  <link rel="stylesheet" href="./css/inst.css" />
+  <link rel="icon" href="./img/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="back">
+      <button class="button" onclick="location.href='./lab35.html'" type="button"> На головну ↩ </button>
+    </div>
+    <div class="heading-container">
+      <div class="heading-container-2">
+        <h1>
+          Довідка з виконання лабораторної роботи
+        </h1><br />
+        <p class="centered">
+          На цій сторінці описуються ключові моменти у виконанні віртуальної
+          лабораторної роботи, які можуть викликати питання.
+        </p>
+      </div>
+      <div class="block">
+        <p>
+          1. Для початку виконання віртуальної лабораторної роботи, необхідно увімкнути прилад за допомогою відповідної
+          кнопки.
+        </p>
+        <img src="./images/inst-1.png" width="370" alt="" />
+        <span class="subtext">Зображення 1 - увімкнути прилад</span>
+        <p>
+          2. Обираємо значення потрібної анодної напруги, за допомогою відповідного перемикача:
+        </p>
+        <img src="./images/inst-2.png" width="370" alt="" />
+        <span class="subtext">Зображення 2 - обрати напругу</span>
+        <p>
+          3. Змінюємо струм соленоїда, за допомогою повзунка
+        </p>
+        <img src="./images/inst-3.png" width="370" alt="" />
+        <span class="subtext">Зображення 3 - зміна струму соленоїда</span>
+
+        <img src="./images/inst-4.png" width="370" alt="" />
+        <span class="subtext">Зображення 4 - показує струм соленоїда в А</span>
+
+        <img src="./images/inst-5.png" width="370" alt="" />
+        <span class="subtext">Зображення 5 - показує силу струму на магнетроні в А</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <img src="./images/logo.png" alt="Герб ПДТУ" />
+      <span>
+        ДВНЗ "Приазовський державний технічний університет" <br />
+        Факультет інформаційних технологій <br />
+        Кафедра фізики © <span id="year-label">2025</span>
+        <script>
+          document.getElementById("year-label").textContent = new Date().getFullYear();
+        </script>
+      </span>
+    </div>
+  </footer>
+</body>
+
+</html>
