@@ -14,20 +14,9 @@
 
 ---
 
+## 🌍 Онлайн-версія (GitHub Pages)
+
+👉 **Демо:** https://andrey-sd.github.io/pstu_physics/
+
 ## 📁 Структура проєкту
 
-pstu_physics/
-├─ index.html                # головний каталог лабораторних
-├─ sources/                  # стилі / іконки / скрипти каталогу
-├─ Lab91/                    # приклад лабораторної на HTML/CSS/JS
-│  └─ lab91.html
-├─ Lab95/                    # приклад лабораторної на HTML/CSS/JS
-│  ├─ index.html
-│  └─ assets/
-├─ Lab95/                    # приклад лабораторної на HTML/CSS/JS
-│  ├─ index.html
-│  └─ assets/
-├─ Lab(template)/            # шаблон для майбутніх лабораторних
-│  ├─ index.html
-│  └─ documents/
-└─ ...
